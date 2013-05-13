@@ -402,6 +402,23 @@ begin
       ct_stm32f107vb,
       ct_stm32f107vc,
 
+      { STMicroelectronics F3 }
+      ct_stm32f302xB, 
+      ct_stm32f302xC  
+      ct_stm32f303xB, 
+      ct_stm32f303xC  
+      ct_stm32f313xB, 
+      ct_stm32f313xC  
+      ct_stm32f372x8, 
+      ct_stm32f372xB  
+      ct_stm32f372xC  
+      ct_stm32f373x8, 
+      ct_stm32f373xB  
+      ct_stm32f373xC  
+      ct_stm32f383x8, 
+      ct_stm32f383xB  
+      ct_stm32f383xC  
+
       { TI - 64 K Flash, 16 K SRAM Devices }
       ct_lm3s1110,
       ct_lm3s1133,
