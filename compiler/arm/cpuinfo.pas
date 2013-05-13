@@ -216,24 +216,24 @@ Type
       ct_stm32f107xC,
 
       { STMicroelectronics F3 }
-      ct_stm32f302xB, // 128k
-      ct_stm32f302xC  // 256k
-      ct_stm32f303xB, // 128k
-      ct_stm32f303xC  // 256k
+      ct_stm32f302xB,  // 128k
+      ct_stm32f302xC,  // 256k
+      ct_stm32f303xB,  // 128k
+      ct_stm32f303xC,  // 256k
 
-      ct_stm32f313xB, // 128k
-      ct_stm32f313xC  // 256k
+      ct_stm32f313xB,  // 128k
+      ct_stm32f313xC,  // 256k
 
-      ct_stm32f372x8, // 64k
-      ct_stm32f372xB  // 128k
-      ct_stm32f372xC  // 256k
-      ct_stm32f373x8, // 64k
-      ct_stm32f373xB  // 128k
-      ct_stm32f373xC  // 256k
+      ct_stm32f372x8,  // 64k
+      ct_stm32f372xB,  // 128k
+      ct_stm32f372xC,  // 256k
+      ct_stm32f373x8,  // 64k
+      ct_stm32f373xB,  // 128k
+      ct_stm32f373xC,  // 256k
 
-      ct_stm32f383x8, // 64k
-      ct_stm32f383xB  // 128k
-      ct_stm32f383xC  // 256k
+      ct_stm32f383x8,  // 64k
+      ct_stm32f383xB,  // 128k
+      ct_stm32f383xC,  // 256k
 
       { TI - Fury Class - 64 K Flash, 16 K SRAM Devices }
       ct_lm3s1110,
