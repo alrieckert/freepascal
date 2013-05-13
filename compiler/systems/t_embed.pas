@@ -404,20 +404,20 @@ begin
 
       { STMicroelectronics F3 }
       ct_stm32f302xB, 
-      ct_stm32f302xC  
+      ct_stm32f302xC,  
       ct_stm32f303xB, 
-      ct_stm32f303xC  
+      ct_stm32f303xC,  
       ct_stm32f313xB, 
-      ct_stm32f313xC  
+      ct_stm32f313xC,  
       ct_stm32f372x8, 
-      ct_stm32f372xB  
-      ct_stm32f372xC  
+      ct_stm32f372xB,  
+      ct_stm32f372xC,  
       ct_stm32f373x8, 
-      ct_stm32f373xB  
-      ct_stm32f373xC  
+      ct_stm32f373xB,  
+      ct_stm32f373xC,  
       ct_stm32f383x8, 
-      ct_stm32f383xB  
-      ct_stm32f383xC  
+      ct_stm32f383xB,  
+      ct_stm32f383xC,  
 
       { TI - 64 K Flash, 16 K SRAM Devices }
       ct_lm3s1110,
@@ -514,13 +514,16 @@ begin
               Add('{');
               if flashsize<>0 then
                 begin
-                  LinkStr := '    flash : ORIGIN = 0x' + IntToHex(flashbase,8)
-                    + ', LENGTH = 0x' + IntToHex(flashsize,8);
+                  if ImageBaseSetExplicity then
+                    LinkStr := '    flash : ORIGIN = 0x' + IntToHex(imagebase,8) + ', LENGTH = 0x' + IntToHex(flashsize - (imagebase - flashbase),8)
+                  else
+                    LinkStr := '    flash : ORIGIN = 0x' + IntToHex(flashbase,8) + ', LENGTH = 0x' + IntToHex(flashsize,8);
+
                   Add(LinkStr);
                 end;
 
               LinkStr := '    ram : ORIGIN = 0x' + IntToHex(srambase,8)
-              	+ ', LENGTH = 0x' + IntToHex(sramsize,8);
+                + ', LENGTH = 0x' + IntToHex(sramsize,8);
               Add(LinkStr);
 
               Add('}');
@@ -536,7 +539,7 @@ begin
         end
     else
       if not (cs_link_nolink in current_settings.globalswitches) then
-      	 internalerror(200902011);
+         internalerror(200902011);
   end;
 
   with linkres do
@@ -644,14 +647,14 @@ begin
       Add('SECTIONS');
       Add('{');
       Add('  /* Read-only sections, merged into text segment: */');
-      Add('  .hash          : { *(.hash)		}');
-      Add('  .dynsym        : { *(.dynsym)		}');
-      Add('  .dynstr        : { *(.dynstr)		}');
-      Add('  .gnu.version   : { *(.gnu.version)	}');
-      Add('  .gnu.version_d   : { *(.gnu.version_d)	}');
-      Add('  .gnu.version_r   : { *(.gnu.version_r)	}');
-      Add('  .rel.init      : { *(.rel.init)		}');
-      Add('  .rela.init     : { *(.rela.init)	}');
+      Add('  .hash          : { *(.hash)    }');
+      Add('  .dynsym        : { *(.dynsym)    }');
+      Add('  .dynstr        : { *(.dynstr)    }');
+      Add('  .gnu.version   : { *(.gnu.version) }');
+      Add('  .gnu.version_d   : { *(.gnu.version_d) }');
+      Add('  .gnu.version_r   : { *(.gnu.version_r) }');
+      Add('  .rel.init      : { *(.rel.init)    }');
+      Add('  .rela.init     : { *(.rela.init) }');
       Add('  .rel.text      :');
       Add('    {');
       Add('      *(.rel.text)');
@@ -664,8 +667,8 @@ begin
       Add('      *(.rela.text.*)');
       Add('      *(.rela.gnu.linkonce.t*)');
       Add('    }');
-      Add('  .rel.fini      : { *(.rel.fini)		}');
-      Add('  .rela.fini     : { *(.rela.fini)	}');
+      Add('  .rel.fini      : { *(.rel.fini)    }');
+      Add('  .rela.fini     : { *(.rela.fini) }');
       Add('  .rel.rodata    :');
       Add('    {');
       Add('      *(.rel.rodata)');
@@ -690,16 +693,16 @@ begin
       Add('      *(.rela.data.*)');
       Add('      *(.rela.gnu.linkonce.d*)');
       Add('    }');
-      Add('  .rel.ctors     : { *(.rel.ctors)	}');
-      Add('  .rela.ctors    : { *(.rela.ctors)	}');
-      Add('  .rel.dtors     : { *(.rel.dtors)	}');
-      Add('  .rela.dtors    : { *(.rela.dtors)	}');
-      Add('  .rel.got       : { *(.rel.got)		}');
-      Add('  .rela.got      : { *(.rela.got)		}');
-      Add('  .rel.bss       : { *(.rel.bss)		}');
-      Add('  .rela.bss      : { *(.rela.bss)		}');
-      Add('  .rel.plt       : { *(.rel.plt)		}');
-      Add('  .rela.plt      : { *(.rela.plt)		}');
+      Add('  .rel.ctors     : { *(.rel.ctors) }');
+      Add('  .rela.ctors    : { *(.rela.ctors)  }');
+      Add('  .rel.dtors     : { *(.rel.dtors) }');
+      Add('  .rela.dtors    : { *(.rela.dtors)  }');
+      Add('  .rel.got       : { *(.rel.got)   }');
+      Add('  .rela.got      : { *(.rela.got)    }');
+      Add('  .rel.bss       : { *(.rel.bss)   }');
+      Add('  .rela.bss      : { *(.rela.bss)    }');
+      Add('  .rel.plt       : { *(.rel.plt)   }');
+      Add('  .rela.plt      : { *(.rela.plt)    }');
       Add('  /* Internal text space or external memory.  */');
       Add('  .text   :');
       Add('  {');
@@ -776,7 +779,7 @@ begin
       Add('    KEEP (*(.fini0))');
       Add('     _etext = . ;');
       Add('  }  > text');
-      Add('  .data	  : AT (ADDR (.text) + SIZEOF (.text))');
+      Add('  .data    : AT (ADDR (.text) + SIZEOF (.text))');
       Add('  {');
       Add('     PROVIDE (__data_start = .) ;');
       Add('    *(.data)');
@@ -1124,6 +1127,13 @@ begin
         success:=DoExec(FindUtil(utilsprefix+'objcopy'),'-O binary '+
           ChangeFileExt(current_module.exefilename,'.elf')+' '+
           ChangeFileExt(current_module.exefilename,'.bin'),true,false);
+    end;
+
+  if success and (target_info.system in [system_arm_embedded,system_avr_embedded]) then
+    begin
+      success:=DoExec(FindUtil(utilsprefix+'objcopy'),'-O binary '+
+        ChangeFileExt(current_module.exefilename,'.elf')+' '+
+        ChangeFileExt(current_module.exefilename,'.bin'),true,false);
     end;
 
   MakeExecutable:=success;   { otherwise a recursive call to link method }
