@@ -419,6 +419,16 @@ begin
       ct_stm32f383xB,  
       ct_stm32f383xC,  
 
+      { STMicroelectronics F4 }
+      ct_stm32f405xE,
+      ct_stm32f405xG,
+      ct_stm32f407xE,
+      ct_stm32f407xG,
+      ct_stm32f415xE,
+      ct_stm32f415xG,
+      ct_stm32f417xE,
+      ct_stm32f417xG,
+
       { TI - 64 K Flash, 16 K SRAM Devices }
       ct_lm3s1110,
       ct_lm3s1133,
