@@ -1,5 +1,5 @@
 //======================================================================
-// Title        : STM32F3xx Register Definitions
+// Title        : STM32F4xx Register Definitions
 // Authors      : Anton Rieckert
 // Email        : anton@riecktron.co.za
 // Last Updated : May, 2013
@@ -27,10 +27,10 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
 // SOFTWARE.
 //======================================================================
-unit stm32f3xx;
+unit stm32f4xx;
 
 {$goto on}
-{$define stm32f3xx}
+{$define stm32f4xx}
 
 //======================================================================
 interface
@@ -41,62 +41,86 @@ interface
 // Peripheral base offsets
 //======================================================================
 const
-  PeripheralBase = $40000000;
+  PeripheralBase      = $40000000;
+  FSMCBase            = $60000000;
   
-  APB1Base       = PeripheralBase;
-  APB2Base       = PeripheralBase + $00010000;
-  AHB1Base       = PeripheralBase + $00020000;
-  AHB2Base       = PeripheralBase + $08000000;
-  AHB3Base       = PeripheralBase + $10000000;
+  APB1Base            = PeripheralBase;
+  APB2Base            = PeripheralBase + $00010000;
+  AHB1Base            = PeripheralBase + $00020000;
+  AHB2Base            = PeripheralBase + $10000000;
+  AHB3Base            = PeripheralBase + $20000000;
 
+  FSMCBank1Base       = FSMCBase;
+  FSMCBank2Base       = FSMCBase + $10000000;
+  FSMCBank3Base       = FSMCBase + $20000000;
+  FSMCBank4Base       = FSMCBase + $30000000;
+  FSMCBankControlBase = FSMCBase + $40000000;
+  
 //======================================================================
 // Register type definitions
 //======================================================================
 type
   TRCCRegisters = record
-    CR       : longword;
-    CFGR     : longword;
-    CIR      : longword;
-    APB2RSTR : longword;
-    APB1RSTR : longword;
-    AHBENR   : longword;
-    APB2ENR  : longword;
-    APB1ENR  : longword;
-    BDCR     : longword;
-    CSR      : longword;
-    AHBRSTR  : longword;
-    CFGR2    : longword;
-    CFGR3    : longword;
+    CR         : longword;    // 0x00
+    PLLCF      : longword;    // 0x04
+    CFGR       : longword;    // 0x08
+    CIR        : longword;    // 0x0C
+    AHB1RSTR   : longword;    // 0x10
+    AHB2RSTR   : longword;    // 0x14
+    AHB3RSTR   : longword;    // 0x18
+    res1       : longword;    // 0x1C
+    APB1RSTR   : longword;    // 0x20
+    APB2RSTR   : longword;    // 0x24
+    res2       : longword;    // 0x28
+    res3       : longword;    // 0x2C
+    AHB1ENR    : longword;    // 0x30
+    AHB2ENR    : longword;    // 0x34
+    AHB3ENR    : longword;    // 0x38
+    res4       : longword;    // 0x3C
+    APB1ENR    : longword;    // 0x40
+    APB2ENR    : longword;    // 0x44
+    res5       : longword;    // 0x48
+    res6       : longword;    // 0x4C
+    AHB1LPENR  : longword;    // 0x50
+    AHB2LPENR  : longword;    // 0x54
+    AHB3LPENR  : longword;    // 0x58
+    res7       : longword;    // 0x5C
+    APB1LPENR  : longword;    // 0x60
+    APB2LPENR  : longword;    // 0x64
+    res8       : longword;    // 0x68
+    res9       : longword;    // 0x6C
+    BDCR       : longword;    // 0x70
+    CSR        : longword;    // 0x74
+    res10      : longword;    // 0x78
+    res11      : longword;    // 0x7C
+    SSCGR      : longword;    // 0x80
+    PLLI2SCFGR : longword;    // 0x84
   end;
 
 type
   TPortRegisters = record
-    MODER         : longword;
-    OTYPER, res1  : word;
-    OSPEEDR       : longword;
-    PUPDR         : longword;
-    IDR, res2     : word;
-    ODR, res3     : word;
-    BSRR          : longword;
-    LCKR          : longword;
-    AFR           : array[0..1] of longword;
-    BRR, res4     : word;
+    MODER    : longword;    // 0x00
+    OTYPER   : longword;    // 0x04
+    OSPEEDR  : longword;    // 0x08
+    PUPDR    : longword;    // 0x0C
+    IDR      : longword;    // 0x10
+    ODR      : longword;    // 0x14
+    BSRR     : longword;    // 0x18
+    LCKR     : longword;    // 0x1C
+    AFRL     : longword;    // 0x20
+    AFRH     : longword;    // 0x24
   end;
 
 type
   TUSARTRegisters = record
-    CR1        : longword;
-    CR2        : longword;
-    CR3        : longword;
-    BRR, res1  : word;
-    GTPR, res2 : word;
-    RTOR       : longword;
-    RQR, res3  : word;
-    ISR        : longword;
-    ICR        : longword;
-    RDR, res4  : word;
-    TDR, res5  : word;
-  end;
+    SR, res1   : word;    // 0x00
+    DR, res2   : word;    // 0x04
+    BRR, res3  : word;    // 0x08
+    CR1, res4  : word;    // 0x0C
+    CR2, res5  : word;    // 0x10
+    CR3, res6  : word;    // 0x14
+    GTPR, res7 : word;    // 0x18
+  end;                    
 
 type
   TSPIRegisters = record
@@ -126,16 +150,14 @@ type
     TXDR, res6  : word;
   end;
 
+type
   TFlashRegisters = record
     ACR     : longword;  //0x00
     KEYR    : longword;  //0x04
     OPTKEYR : longword;  //0x08
     SR      : longword;  //0x0C
     CR      : longword;  //0x10
-    AR      : longword;  //0x14
-    res     : longword;  //0x18
-    OBR     : longword;  //0x1C
-    WRPR    : longword;  //0x20
+    OPTCR   : longword;  //0x14
   end;
 
   TTimerRegisters = record
@@ -357,8 +379,6 @@ type
     CR: byte;
     end;
 
-
-
 {$ALIGN 2}
 
 //======================================================================
@@ -366,26 +386,30 @@ type
 //======================================================================
 var
   { RCC }
-  RCC : TRCCRegisters       absolute (AHB1Base + $1000);
+  RCC : TRCCRegisters       absolute (AHB1Base + $3800);
 
   { Flash }
-  Flash : TFlashRegisters   absolute (AHB1Base + $2000);
+  Flash : TFlashRegisters   absolute (AHB1Base + $3C00);
 
   { GPIO }
-  PortA : TPortRegisters    absolute (AHB2Base + $0000);
-  PortB : TPortRegisters    absolute (AHB2Base + $0400);
-  PortC : TPortRegisters    absolute (AHB2Base + $0800);
-  PortD : TPortRegisters    absolute (AHB2Base + $0C00);
-  PortE : TPortRegisters    absolute (AHB2Base + $1000);
-  PortF : TPortRegisters    absolute (AHB2Base + $1400);
+  PortA : TPortRegisters    absolute (AHB1Base + $0000);
+  PortB : TPortRegisters    absolute (AHB1Base + $0400);
+  PortC : TPortRegisters    absolute (AHB1Base + $0800);
+  PortD : TPortRegisters    absolute (AHB1Base + $0C00);
+  PortE : TPortRegisters    absolute (AHB1Base + $1000);
+  PortF : TPortRegisters    absolute (AHB1Base + $1400);
+  PortG : TPortRegisters    absolute (AHB1Base + $1800);
+  PortH : TPortRegisters    absolute (AHB1Base + $1C00);
+  PortI : TPortRegisters    absolute (AHB1Base + $2000);
 
   { USART/UART }
-  USART1 : TUSARTRegisters  absolute (APB2Base + $3800);
+  USART1 : TUSARTRegisters  absolute (APB2Base + $1000);
   USART2 : TUSARTRegisters  absolute (APB1Base + $4400);
   USART3 : TUSARTRegisters  absolute (APB1Base + $4800);
   UART4  : TUSARTRegisters  absolute (APB1Base + $4C00);
   UART5  : TUSARTRegisters  absolute (APB1Base + $5000);
-  
+  USART6 : TUSARTRegisters  absolute (APB2Base + $1400);
+
   { SPI }
   SPI1 : TSPIRegisters      absolute (APB2Base + $3000);
   SPI2 : TSPIRegisters      absolute (APB1Base + $3800);
@@ -394,6 +418,7 @@ var
   { I2C }
   I2C1 : TI2CRegisters      absolute (APB1Base + $5400);
   I2C2 : TI2CRegisters      absolute (APB1Base + $5800);
+  I2C3 : TI2CRegisters      absolute (APB1Base + $5C00);
 
 
 (*
@@ -536,106 +561,83 @@ label interrupt_vectors;
 asm
    .section ".init.interrupt_vectors"
 interrupt_vectors:
-   .long _stack_top                                            // 0x0000
-   .long Startup                                               // 0x0004
-   .long NMI_interrupt                                         // 0x0008
-   .long Hardfault_interrupt                                   // 0x000C
-   .long MemManage_interrupt                                   // 0x0010
-   .long BusFault_interrupt                                    // 0x0014
-   .long UsageFault_interrupt                                  // 0x0018
-   .long 0                                                     // 0x001C
-   .long 0                                                     // 0x0020
-   .long 0                                                     // 0x0024
-   .long 0                                                     // 0x0028
-   .long SWI_interrupt                                         // 0x002C
-   .long DebugMonitor_interrupt                                // 0x0030
-   .long 0                                                     // 0x0034
-   .long PendingSV_interrupt                                   // 0x0038
-   .long SysTick_interrupt                                     // 0x003C
+   .long _stack_top
+   .long Startup
+   .long NMI_interrupt
+   .long Hardfault_interrupt
+   .long MemManage_interrupt
+   .long BusFault_interrupt
+   .long UsageFault_interrupt
+   .long 0
+   .long 0
+   .long 0
+   .long 0
+   .long SWI_interrupt
+   .long DebugMonitor_interrupt
+   .long 0
+   .long PendingSV_interrupt
+   .long SysTick_interrupt
    
-   .long Window_watchdog_interrupt                             // 0x0040
-   .long PVD_through_EXTI_Line_detection_interrupt             // 0x0044
-   .long Tamper_interrupt                                      // 0x0048
-   .long RTC_global_interrupt                                  // 0x004C
-   .long Flash_global_interrupt                                // 0x0050
-   .long RCC_global_interrupt                                  // 0x0054
-   .long EXTI_Line0_interrupt                                  // 0x0058
-   .long EXTI_Line1_interrupt                                  // 0x005C
-   .long EXTI_Line2_interrupt                                  // 0x0060
-   .long EXTI_Line3_interrupt                                  // 0x0064
-   .long EXTI_Line4_interrupt                                  // 0x0068
-   .long DMA1_Channel1_global_interrupt                        // 0x006C
-   .long DMA1_Channel2_global_interrupt                        // 0x0070
-   .long DMA1_Channel3_global_interrupt                        // 0x0074
-   .long DMA1_Channel4_global_interrupt                        // 0x0078
-   .long DMA1_Channel5_global_interrupt                        // 0x007C
-   .long DMA1_Channel6_global_interrupt                        // 0x0080
-   .long DMA1_Channel7_global_interrupt                        // 0x0084
-   .long ADC1_and_ADC2_global_interrupt                        // 0x0088
-   .long USB_High_Priority_or_CAN_TX_interrupts                // 0x008C
-   .long USB_Low_Priority_or_CAN_RX0_interrupts                // 0x0090
-   .long CAN_RX1_interrupt                                     // 0x0094
-   .long CAN_SCE_interrupt                                     // 0x0098
-   .long EXTI_Line9_5_interrupts                               // 0x009C
-   .long TIM1_Break_interrupt                                  // 0x00A0
-   .long TIM1_Update_interrupt                                 // 0x00A4
-   .long TIM1_Trigger_and_Commutation_interrupts               // 0x00A8
-   .long TIM1_Capture_Compare_interrupt                        // 0x00AC
-   .long TIM2_global_interrupt                                 // 0x00B0
-   .long TIM3_global_interrupt                                 // 0x00B4
-   .long TIM4_global_interrupt                                 // 0x00B8
-   .long I2C1_event_interrupt                                  // 0x00BC
-   .long I2C1_error_interrupt                                  // 0x00C0
-   .long I2C2_event_interrupt                                  // 0x00C4
-   .long I2C2_error_interrupt                                  // 0x00C8
-   .long SPI1_global_interrupt                                 // 0x00CC
-   .long SPI2_global_interrupt                                 // 0x00D0
-   .long USART1_global_interrupt                               // 0x00D4
-   .long USART2_global_interrupt                               // 0x00D8
-   .long USART3_global_interrupt                               // 0x00DC
-   .long EXTI_Line15_10_interrupts                             // 0x00E0
-   .long RTC_alarm_through_EXTI_line_interrupt                 // 0x00E4
-   .long USB_wakeup_from_suspend_through_EXTI_line_interrupt   // 0x00E8
-   .long TIM8_Break_interrupt                                  // 0x00EC
-   .long TIM8_Update_interrupt                                 // 0x00F0
-   .long TIM8_Trigger_and_Commutation_interrupts               // 0x00F4
-   .long TIM8_Capture_Compare_interrupt                        // 0x00F8
-   .long ADC3_global_interrupt                                 // 0x00FC
-   .long FSMC_global_interrupt                                 // 0x0100
-   .long SDIO_global_interrupt                                 // 0x0104
-   .long TIM5_global_interrupt                                 // 0x0108
-   .long SPI3_global_interrupt                                 // 0x010C
-   .long UART4_global_interrupt                                // 0x0110
-   .long UART5_global_interrupt                                // 0x0114
-   .long TIM6_global_interrupt                                 // 0x0118
-   .long TIM7_global_interrupt                                 // 0x011C
-   .long DMA2_Channel1_global_interrupt                        // 0x0120
-   .long DMA2_Channel2_global_interrupt                        // 0x0124
-   .long DMA2_Channel3_global_interrupt                        // 0x0128
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x012C    
-   
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0130    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0134    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0138    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x013C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0140    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0144    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0148    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x014C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0150    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0154    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0158    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x015C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0160    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0164    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0168    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x016C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0170    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0174    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0178    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x017C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0180    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0184    
+   .long Window_watchdog_interrupt
+   .long PVD_through_EXTI_Line_detection_interrupt
+   .long Tamper_interrupt
+   .long RTC_global_interrupt
+   .long Flash_global_interrupt
+   .long RCC_global_interrupt
+   .long EXTI_Line0_interrupt
+   .long EXTI_Line1_interrupt
+   .long EXTI_Line2_interrupt
+   .long EXTI_Line3_interrupt
+   .long EXTI_Line4_interrupt
+   .long DMA1_Channel1_global_interrupt
+   .long DMA1_Channel2_global_interrupt
+   .long DMA1_Channel3_global_interrupt
+   .long DMA1_Channel4_global_interrupt
+   .long DMA1_Channel5_global_interrupt
+   .long DMA1_Channel6_global_interrupt
+   .long DMA1_Channel7_global_interrupt
+   .long ADC1_and_ADC2_global_interrupt
+   .long USB_High_Priority_or_CAN_TX_interrupts
+   .long USB_Low_Priority_or_CAN_RX0_interrupts
+   .long CAN_RX1_interrupt
+   .long CAN_SCE_interrupt
+   .long EXTI_Line9_5_interrupts
+   .long TIM1_Break_interrupt
+   .long TIM1_Update_interrupt
+   .long TIM1_Trigger_and_Commutation_interrupts
+   .long TIM1_Capture_Compare_interrupt
+   .long TIM2_global_interrupt
+   .long TIM3_global_interrupt
+   .long TIM4_global_interrupt
+   .long I2C1_event_interrupt
+   .long I2C1_error_interrupt
+   .long I2C2_event_interrupt
+   .long I2C2_error_interrupt
+   .long SPI1_global_interrupt
+   .long SPI2_global_interrupt
+   .long USART1_global_interrupt
+   .long USART2_global_interrupt
+   .long USART3_global_interrupt
+   .long EXTI_Line15_10_interrupts
+   .long RTC_alarm_through_EXTI_line_interrupt
+   .long USB_wakeup_from_suspend_through_EXTI_line_interrupt
+   .long TIM8_Break_interrupt
+   .long TIM8_Update_interrupt
+   .long TIM8_Trigger_and_Commutation_interrupts
+   .long TIM8_Capture_Compare_interrupt
+   .long ADC3_global_interrupt
+   .long FSMC_global_interrupt
+   .long SDIO_global_interrupt
+   .long TIM5_global_interrupt
+   .long SPI3_global_interrupt
+   .long UART4_global_interrupt
+   .long UART5_global_interrupt
+   .long TIM6_global_interrupt
+   .long TIM7_global_interrupt
+   .long DMA2_Channel1_global_interrupt
+   .long DMA2_Channel2_global_interrupt
+   .long DMA2_Channel3_global_interrupt
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts
    
    .weak NMI_interrupt
    .weak Hardfault_interrupt

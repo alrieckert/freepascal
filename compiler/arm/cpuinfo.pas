@@ -181,7 +181,7 @@ Type
       ct_at91sam7x256,
       ct_at91sam7xc256,
 
-      { STMicroelectronics }
+      { STMicroelectronics F1 }
       ct_stm32f100x4, // LD&MD value line, 4=16,6=32,8=64,b=128
       ct_stm32f100x6,
       ct_stm32f100x8,
@@ -234,6 +234,17 @@ Type
       ct_stm32f383x8,  // 64k
       ct_stm32f383xB,  // 128k
       ct_stm32f383xC,  // 256k
+
+      { STMicroelectronics F4 }
+      ct_stm32f405xE,  // 512k
+      ct_stm32f405xG,  // 1024k
+      ct_stm32f407xE,  // 512k
+      ct_stm32f407xG,  // 1024k
+
+      ct_stm32f415xE,  // 512k
+      ct_stm32f415xG,  // 1024k
+      ct_stm32f417xE,  // 512k
+      ct_stm32f417xG,  // 1024k
 
       { TI - Fury Class - 64 K Flash, 16 K SRAM Devices }
       ct_lm3s1110,
@@ -312,10 +323,10 @@ Type
 
       { TI Stellaris }
       ct_lm4f120h5,
-      
+
       { SAMSUNG }
       ct_sc32442b,
-      
+
       { Infineon }
       ct_xmc4500x1024,
       ct_xmc4500x768,
@@ -582,6 +593,16 @@ Const
       (controllertypestr:'STM32F383CB';     controllerunitstr:'STM32F3XX';     flashbase:$08000000; flashsize:$00020000; srambase:$20000000; sramsize:$00006000),
       (controllertypestr:'STM32F383XC';     controllerunitstr:'STM32F3XX';     flashbase:$08000000; flashsize:$00040000; srambase:$20000000; sramsize:$00008000),
 
+      { STM32F4 series }
+      (controllertypestr:'STM32F405XE';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00080000; srambase:$20000000; sramsize:$0001C000),
+      (controllertypestr:'STM32F405XG';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00100000; srambase:$20000000; sramsize:$0001C000),
+      (controllertypestr:'STM32F407XE';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00080000; srambase:$20000000; sramsize:$0001C000),
+      (controllertypestr:'STM32F407XG';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00100000; srambase:$20000000; sramsize:$0001C000),
+      (controllertypestr:'STM32F415XE';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00080000; srambase:$20000000; sramsize:$0001C000),
+      (controllertypestr:'STM32F415XG';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00100000; srambase:$20000000; sramsize:$0001C000),
+      (controllertypestr:'STM32F417XE';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00080000; srambase:$20000000; sramsize:$0001C000),
+      (controllertypestr:'STM32F417XG';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00100000; srambase:$20000000; sramsize:$0001C000),
+
       (controllertypestr:'LM3S1110';  controllerunitstr:'LM3FURY';  flashbase:$00000000;  flashsize:$00010000;  srambase:$20000000; sramsize:$00004000),
       (controllertypestr:'LM3S1133';  controllerunitstr:'LM3FURY';  flashbase:$00000000;  flashsize:$00010000;  srambase:$20000000; sramsize:$00004000),
       (controllertypestr:'LM3S1138';  controllerunitstr:'LM3FURY';  flashbase:$00000000;  flashsize:$00010000;  srambase:$20000000; sramsize:$00004000),
@@ -660,7 +681,7 @@ Const
 
       { Samsung }
       (controllertypestr:'SC32442B';  controllerunitstr:'SC32442b'; flashbase:$00000000;  flashsize:$00000000;  srambase:$00000000; sramsize:$08000000),
-      
+
       { Infinion }
       (controllertypestr:'XMC4500X1024';  controllerunitstr:'XMC4500'; flashbase:$08000000; flashsize:$00100000;  srambase:$20000000; sramsize:$00010000),
       (controllertypestr:'XMC4500X768';   controllerunitstr:'XMC4500'; flashbase:$08000000; flashsize:$000C0000;  srambase:$20000000; sramsize:$00010000),
