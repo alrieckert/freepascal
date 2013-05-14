@@ -15,29 +15,91 @@ type
 
 {$PACKRECORDS 2}
 const
- PeripheralBase 	= $40000000;
+ PeripheralBase   = $40000000;
 
- FSMCBase			= $60000000;
+ FSMCBase     = $60000000;
 
- APB1Base 			= PeripheralBase;
- APB2Base 			= PeripheralBase+$10000;
- AHBBase 			= PeripheralBase+$20000;
+ APB1Base       = PeripheralBase;
+ APB2Base       = PeripheralBase+$10000;
+ AHBBase      = PeripheralBase+$20000;
 
  { FSMC }
- FSMCBank1NOR1		= FSMCBase+$00000000;
- FSMCBank1NOR2		= FSMCBase+$04000000;
- FSMCBank1NOR3		= FSMCBase+$08000000;
- FSMCBank1NOR4		= FSMCBase+$0C000000;
+ FSMCBank1NOR1    = FSMCBase+$00000000;
+ FSMCBank1NOR2    = FSMCBase+$04000000;
+ FSMCBank1NOR3    = FSMCBase+$08000000;
+ FSMCBank1NOR4    = FSMCBase+$0C000000;
 
- FSMCBank1PSRAM1	= FSMCBase+$00000000;
- FSMCBank1PSRAM2	= FSMCBase+$04000000;
- FSMCBank1PSRAM3	= FSMCBase+$08000000;
- FSMCBank1PSRAM4	= FSMCBase+$0C000000;
+ FSMCBank1PSRAM1  = FSMCBase+$00000000;
+ FSMCBank1PSRAM2  = FSMCBase+$04000000;
+ FSMCBank1PSRAM3  = FSMCBase+$08000000;
+ FSMCBank1PSRAM4  = FSMCBase+$0C000000;
 
- FSMCBank2NAND1	= FSMCBase+$10000000;
- FSMCBank3NAND2	= FSMCBase+$20000000;
+ FSMCBank2NAND1 = FSMCBase+$10000000;
+ FSMCBank3NAND2 = FSMCBase+$20000000;
 
- FSMCBank4PCCARD	= FSMCBase+$30000000;
+ FSMCBank4PCCARD  = FSMCBase+$30000000;
+
+ FLASH_R_BASE   = (PeripheralBase + $2000); // Flash registers base address 
+ OB_BASE        = $1FFFF800;                // Flash Option Bytes base address 
+
+type
+ TOBRegisters = record
+  RDP : word;
+  USER : word;
+  Data0 : word;
+  Data1 : word;
+  WRP0 : word;
+  WRP1 : word;
+  WRP2 : word;
+  WRP3 : word;
+ end;
+
+ TFSMC_Bank1 = record
+  BCR1 : longword;
+  BTR1 : longword;
+  BCR2 : longword;
+  BTR2 : longword;
+  BCR3 : longword;
+  BTR3 : longword;
+  BCR4 : longword;
+  BTR4 : longword;
+ end;
+
+ TFSMC_Bank1E = record
+  BWTR1 : longword;
+  res1  : longword;
+  BWTR2 : longword;
+  res2  : longword;
+  BWTR3 : longword;
+  res3  : longword;
+  BWTR4 : longword;
+ end;
+
+ TFSMC_Bank2 = record
+  PCR2,
+  SR2,
+  PMEM2,
+  PATT2,
+  res1,
+  ECCR2 : longword
+ end;
+
+ TFSMC_Bank3 = record
+  PCR3,
+  SR3,
+  PMEM3,
+  PATT3,
+  RESERVED0,
+  ECCR3 : longword;
+ end;
+
+ TFSMC_Bank4 = record
+  PCR4,
+  SR4,
+  PMEM4,
+  PATT4,
+  PIO4 : longword;
+ end;
 
 type
  TTimerRegisters = record
@@ -178,14 +240,14 @@ type
  end;
 
  TBKPRegisters = record
-  DR: array[1..10] of record data, res: word; end;
+  DR: array[1..10] of longword;
 
   RTCCR,
   CR,
   CSR,
   res1,res2: longword;
 
-  DR2: array[11..42] of record data, res: word; end;
+  DR2: array[11..42] of longword;
  end;
 
  TPwrRegisters = record
@@ -330,86 +392,96 @@ type
 {$ALIGN 2}
 var
  { Timers }
- Timer1: TTimerRegisters 	absolute (APB2Base+$2C00);
- Timer2: TTimerRegisters 	absolute (APB1Base+$0000);
- Timer3: TTimerRegisters 	absolute (APB1Base+$0400);
- Timer4: TTimerRegisters 	absolute (APB1Base+$0800);
- Timer5: TTimerRegisters 	absolute (APB1Base+$0C00);
- Timer6: TTimerRegisters 	absolute (APB1Base+$1000);
- Timer7: TTimerRegisters 	absolute (APB1Base+$1400);
- Timer8: TTimerRegisters 	absolute (APB2Base+$3400);
+ Timer1: TTimerRegisters  absolute (APB2Base+$2C00);
+ Timer2: TTimerRegisters  absolute (APB1Base+$0000);
+ Timer3: TTimerRegisters  absolute (APB1Base+$0400);
+ Timer4: TTimerRegisters  absolute (APB1Base+$0800);
+ Timer5: TTimerRegisters  absolute (APB1Base+$0C00);
+ Timer6: TTimerRegisters  absolute (APB1Base+$1000);
+ Timer7: TTimerRegisters  absolute (APB1Base+$1400);
+ Timer8: TTimerRegisters  absolute (APB2Base+$3400);
 
  { RTC }
- RTC: TRTCRegisters 			absolute (APB1Base+$2800);
+ RTC: TRTCRegisters       absolute (APB1Base+$2800);
 
  { WDG }
- WWDG: TWWDGRegisters 		absolute (APB1Base+$2C00);
- IWDG: TIWDGRegisters 		absolute (APB1Base+$3000);
+ WWDG: TWWDGRegisters     absolute (APB1Base+$2C00);
+ IWDG: TIWDGRegisters     absolute (APB1Base+$3000);
 
  { SPI }
- SPI1: TSPIRegisters			absolute (APB2Base+$3000);
- SPI2: TSPIRegisters			absolute (APB1Base+$3800);
- SPI3: TSPIRegisters			absolute (APB1Base+$3C00);
+ SPI1: TSPIRegisters      absolute (APB2Base+$3000);
+ SPI2: TSPIRegisters      absolute (APB1Base+$3800);
+ SPI3: TSPIRegisters      absolute (APB1Base+$3C00);
 
  { USART/UART }
- USART1: TUSARTRegisters	absolute (APB2Base+$3800);
- USART2: TUSARTRegisters	absolute (APB1Base+$4400);
- USART3: TUSARTRegisters	absolute (APB1Base+$4800);
- UART4: TUSARTRegisters		absolute (APB1Base+$4C00);
- UART5: TUSARTRegisters		absolute (APB1Base+$5000);
+ USART1: TUSARTRegisters  absolute (APB2Base+$3800);
+ USART2: TUSARTRegisters  absolute (APB1Base+$4400);
+ USART3: TUSARTRegisters  absolute (APB1Base+$4800);
+ UART4: TUSARTRegisters   absolute (APB1Base+$4C00);
+ UART5: TUSARTRegisters   absolute (APB1Base+$5000);
 
  { I2C }
- I2C1: TI2CRegisters			absolute (APB1Base+$5400);
- I2C2: TI2CRegisters			absolute (APB1Base+$5800);
+ I2C1: TI2CRegisters      absolute (APB1Base+$5400);
+ I2C2: TI2CRegisters      absolute (APB1Base+$5800);
 
  { USB }
- USB: TUSBRegisters			absolute (APB1Base+$5C00);
+ USB: TUSBRegisters     absolute (APB1Base+$5C00);
  USBMem: TUSBMem                        absolute (APB1Base+$6000);
 
  { CAN }
- CAN: TCANRegisters			absolute (APB1Base+$6800);
+ CAN: TCANRegisters     absolute (APB1Base+$6800);
 
  { BKP }
- BKP: TBKPRegisters			absolute (APB1Base+$6C00);
+ BKP: TBKPRegisters     absolute (APB1Base+$6C00);
 
  { PWR }
- PWR: TPwrRegisters			absolute (APB1Base+$7000);
+ PWR: TPwrRegisters     absolute (APB1Base+$7000);
 
  { DAC }
- DAC: TDACRegisters			absolute (APB1Base+$7400);
+ DAC: TDACRegisters     absolute (APB1Base+$7400);
 
  { GPIO }
- AFIO: TAFIORegisters		absolute (APB2Base+$0);
- EXTI: TEXTIRegisters		absolute (APB2Base+$0400);
+ AFIO: TAFIORegisters   absolute (APB2Base+$0);
+ EXTI: TEXTIRegisters   absolute (APB2Base+$0400);
 
- PortA: TPortRegisters		absolute (APB2Base+$0800);
- PortB: TPortRegisters		absolute (APB2Base+$0C00);
- PortC: TPortRegisters		absolute (APB2Base+$1000);
- PortD: TPortRegisters		absolute (APB2Base+$1400);
- PortE: TPortRegisters		absolute (APB2Base+$1800);
- PortF: TPortRegisters		absolute (APB2Base+$1C00);
- PortG: TPortRegisters		absolute (APB2Base+$2000);
+ PortA: TPortRegisters    absolute (APB2Base+$0800);
+ PortB: TPortRegisters    absolute (APB2Base+$0C00);
+ PortC: TPortRegisters    absolute (APB2Base+$1000);
+ PortD: TPortRegisters    absolute (APB2Base+$1400);
+ PortE: TPortRegisters    absolute (APB2Base+$1800);
+ PortF: TPortRegisters    absolute (APB2Base+$1C00);
+ PortG: TPortRegisters    absolute (APB2Base+$2000);
 
  { ADC }
- ADC1: TADCRegisters			absolute (APB2Base+$2400);
- ADC2: TADCRegisters			absolute (APB2Base+$2800);
- ADC3: TADCRegisters			absolute (APB2Base+$3C00);
+ ADC1: TADCRegisters      absolute (APB2Base+$2400);
+ ADC2: TADCRegisters      absolute (APB2Base+$2800);
+ ADC3: TADCRegisters      absolute (APB2Base+$3C00);
 
  { SDIO }
- SDIO: TSDIORegisters		absolute (APB2Base+$8000);
+ SDIO: TSDIORegisters   absolute (APB2Base+$8000);
 
  { DMA }
- DMA1: TDMARegisters			absolute (AHBBase+$0000);
- DMA2: TDMARegisters			absolute (AHBBase+$0400);
+ DMA1: TDMARegisters      absolute (AHBBase+$0000);
+ DMA2: TDMARegisters      absolute (AHBBase+$0400);
 
  { RCC }
- RCC: TRCCRegisters			absolute (AHBBase+$1000);
+ RCC: TRCCRegisters     absolute (AHBBase+$1000);
 
  { Flash }
- Flash: TFlashRegisters		absolute (AHBBase+$2000);
+ Flash: TFlashRegisters   absolute (AHBBase+$2000);
 
  { CRC }
- CRC: TCRCRegisters			absolute (AHBBase+$3000);
+ CRC: TCRCRegisters     absolute (AHBBase+$3000);
+
+ { OPTION BYTES }
+ OB : TOBRegisters absolute (OB_BASE);
+
+ { FSMC }
+ FSMC_Bank1 : TFSMC_Bank1 absolute (FSMCBase + $40000000);
+ FSMC_Bank1E : TFSMC_Bank1E absolute (FSMCBase + $40000104);
+ FSMC_Bank2 : TFSMC_Bank2 absolute (FSMCBase + $40000060);
+ FSMC_Bank3 : TFSMC_Bank3 absolute (FSMCBase + $40000080);
+ FSMC_Bank4 : TFSMC_Bank4 absolute (FSMCBase + $400000A0);
 
 implementation
 
