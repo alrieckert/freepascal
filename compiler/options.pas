@@ -1969,6 +1969,8 @@ begin
                             s:=upper(copy(more,j+1,length(more)-j));
                             if not(SetControllerType(s,init_settings.controllertype)) then
                               IllegalPara(opt);
+                            def_system_macro(embedded_controllers[init_settings.controllertype].controllertypestr);
+                            def_system_macro(embedded_controllers[init_settings.controllertype].controllerunitstr);
                             break;
                           end
                         else

@@ -406,6 +406,16 @@ unit scandir;
         do_message(scan_f_user_defined);
       end;
 
+    procedure dir_flashbase;
+      begin
+        if (target_info.system in (systems_embedded)) then
+        begin
+          current_scanner.skipspace;
+          imagebase:=current_scanner.readval;
+          ImageBaseSetExplicity:=true
+        end;
+      end;
+
     procedure dir_fputype;
       begin
         current_scanner.skipspace;
@@ -1720,6 +1730,7 @@ unit scandir;
         AddDirective('EXTERNALSYM',directive_all, @dir_externalsym);
         AddDirective('F',directive_all, @dir_forcefarcalls);
         AddDirective('FATAL',directive_all, @dir_fatal);
+        AddDirective('FLASHBASE',directive_all, @dir_flashbase);
         AddDirective('FPUTYPE',directive_all, @dir_fputype);
         AddDirective('FRAMEWORKPATH',directive_all, @dir_frameworkpath);
         AddDirective('GOTO',directive_all, @dir_goto);
