@@ -7,24 +7,24 @@
 //
 // Copyright (c) 2013 Anton Rieckert (anton@riecktron.co.za)
 //
-// Permission is hereby granted, free of charge, to any person obtaining 
-// a copy of this software and associated documentation files 
-// (the "Software"), to deal in the Software without restriction, 
-// including without limitation the rights to use, copy, modify, merge, 
-// publish, distribute, sublicense, and/or sell copies of the Software, 
-// and to permit persons to whom the Software is furnished to do so, 
+// Permission is hereby granted, free of charge, to any person obtaining
+// a copy of this software and associated documentation files
+// (the "Software"), to deal in the Software without restriction,
+// including without limitation the rights to use, copy, modify, merge,
+// publish, distribute, sublicense, and/or sell copies of the Software,
+// and to permit persons to whom the Software is furnished to do so,
 // subject to the following conditions:
 //
-// The above copyright notice and this permission notice shall be 
+// The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS 
-// BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN 
-// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+// BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //======================================================================
 unit stm32f3xx;
@@ -42,7 +42,7 @@ interface
 //======================================================================
 const
   PeripheralBase = $40000000;
-  
+
   APB1Base       = PeripheralBase;
   APB2Base       = PeripheralBase + $00010000;
   AHB1Base       = PeripheralBase + $00020000;
@@ -54,88 +54,89 @@ const
 //======================================================================
 type
   TRCCRegisters = record
-    CR       : longword;
-    CFGR     : longword;
-    CIR      : longword;
-    APB2RSTR : longword;
-    APB1RSTR : longword;
-    AHBENR   : longword;
-    APB2ENR  : longword;
-    APB1ENR  : longword;
-    BDCR     : longword;
-    CSR      : longword;
-    AHBRSTR  : longword;
-    CFGR2    : longword;
-    CFGR3    : longword;
+    CR       : longword;      //0x00
+    CFGR     : longword;      //0x04
+    CIR      : longword;      //0x08
+    APB2RSTR : longword;      //0x0C
+    APB1RSTR : longword;      //0x10
+    AHBENR   : longword;      //0x14
+    APB2ENR  : longword;      //0x18
+    APB1ENR  : longword;      //0x1C
+    BDCR     : longword;      //0x20
+    CSR      : longword;      //0x24
+    AHBRSTR  : longword;      //0x28
+    CFGR2    : longword;      //0x2C
+    CFGR3    : longword;      //0x30
   end;
 
 type
   TPortRegisters = record
-    MODER         : longword;
-    OTYPER, res1  : word;
-    OSPEEDR       : longword;
-    PUPDR         : longword;
-    IDR, res2     : word;
-    ODR, res3     : word;
-    BSRR          : longword;
-    LCKR          : longword;
-    AFR           : array[0..1] of longword;
-    BRR, res4     : word;
+    MODER         : longword;                 //0x00
+    OTYPER, res1  : word;                     //0x04
+    OSPEEDR       : longword;                 //0x08
+    PUPDR         : longword;                 //0x0C
+    IDR, res2     : word;                     //0x10
+    ODR, res3     : word;                     //0x14
+    BSRR          : longword;                 //0x18
+    LCKR          : longword;                 //0x1C
+    AFR           : array[0..1] of longword;  //0x20, 0x24
+    BRR, res4     : word;                     //0x28
   end;
 
 type
   TUSARTRegisters = record
-    CR1        : longword;
-    CR2        : longword;
-    CR3        : longword;
-    BRR, res1  : word;
-    GTPR, res2 : word;
-    RTOR       : longword;
-    RQR, res3  : word;
-    ISR        : longword;
-    ICR        : longword;
-    RDR, res4  : word;
-    TDR, res5  : word;
+    CR1        : longword;    //0x00
+    CR2        : longword;    //0x04
+    CR3        : longword;    //0x08
+    BRR, res1  : word;        //0x0C
+    GTPR, res2 : word;        //0x10
+    RTOR       : longword;    //0x14
+    RQR, res3  : word;        //0x18
+    ISR        : longword;    //0x1C
+    ICR        : longword;    //0x20
+    RDR, res4  : word;        //0x24
+    TDR, res5  : word;        //0x28
   end;
 
 type
   TSPIRegisters = record
-    CR1, res1     : word;
-    CR2, res2     : word; 
-    SR, res3      : word;
-    DR, res4      : word;
-    CRCPR, res5   : word;
-    RXCRCR, res6  : word;
-    TXCRCR, res7  : word;
-    I2SCFGR, res8 : word;
-    I2SPR, res9   : word;
+    CR1, res1     : word;     //0x00
+    CR2, res2     : word;     //0x04
+    SR, res3      : word;     //0x08
+    DR, res4      : word;     //0x0C
+    CRCPR, res5   : word;     //0x10
+    RXCRCR, res6  : word;     //0x14
+    TXCRCR, res7  : word;     //0x18
+    I2SCFGR, res8 : word;     //0x1C
+    I2SPR, res9   : word;     //0x20
   end;
 
 type
   TI2CRegisters = record
-    CR1         : longword;
-    CR2         : longword;
-    OAR1, res1  : word;
-    OAR2, res2  : word;
-    TIMINGR     : longword;
-    TIMEOUTR    : longword;
-    ISR         : longword;
-    ICR, res3   : word;
-    PECR, res4  : word;
-    RXDR, res5  : word;
-    TXDR, res6  : word;
+    CR1         : longword;   //0x00
+    CR2         : longword;   //0x04
+    OAR1, res1  : word;       //0x08
+    OAR2, res2  : word;       //0x0C
+    TIMINGR     : longword;   //0x10
+    TIMEOUTR    : longword;   //0x14
+    ISR         : longword;   //0x18
+    ICR, res3   : word;       //0x1C
+    PECR, res4  : word;       //0x20
+    RXDR, res5  : word;       //0x24
+    TXDR, res6  : word;       //0x28
   end;
 
+type
   TFlashRegisters = record
-    ACR     : longword;  //0x00
-    KEYR    : longword;  //0x04
-    OPTKEYR : longword;  //0x08
-    SR      : longword;  //0x0C
-    CR      : longword;  //0x10
-    AR      : longword;  //0x14
-    res     : longword;  //0x18
-    OBR     : longword;  //0x1C
-    WRPR    : longword;  //0x20
+    ACR     : longword;       //0x00
+    KEYR    : longword;       //0x04
+    OPTKEYR : longword;       //0x08
+    SR      : longword;       //0x0C
+    CR      : longword;       //0x10
+    AR      : longword;       //0x14
+    res     : longword;       //0x18
+    OBR     : longword;       //0x1C
+    WRPR    : longword;       //0x20
   end;
 
   TTimerRegisters = record
@@ -385,7 +386,7 @@ var
   USART3 : TUSARTRegisters  absolute (APB1Base + $4800);
   UART4  : TUSARTRegisters  absolute (APB1Base + $4C00);
   UART5  : TUSARTRegisters  absolute (APB1Base + $5000);
-  
+
   { SPI }
   SPI1 : TSPIRegisters      absolute (APB2Base + $3000);
   SPI2 : TSPIRegisters      absolute (APB1Base + $3800);
@@ -404,7 +405,7 @@ var
 
   AFIO: TAFIORegisters   absolute (APB2Base+$0);
   EXTI: TEXTIRegisters   absolute (APB2Base+$0400);
-  
+
 
   { Timers }
   Timer1: TTimerRegisters  absolute (APB2Base+$2C00);
@@ -415,48 +416,48 @@ var
   Timer6: TTimerRegisters  absolute (APB1Base+$1000);
   Timer7: TTimerRegisters  absolute (APB1Base+$1400);
   Timer8: TTimerRegisters  absolute (APB2Base+$3400);
-  
+
   { RTC }
   RTC: TRTCRegisters       absolute (APB1Base+$2800);
-  
+
   { WDG }
   WWDG: TWWDGRegisters     absolute (APB1Base+$2C00);
   IWDG: TIWDGRegisters     absolute (APB1Base+$3000);
-  
-  
+
+
   { USB }
   USB: TUSBRegisters     absolute (APB1Base+$5C00);
   USBMem: TUSBMem                        absolute (APB1Base+$6000);
-  
+
   { CAN }
   CAN: TCANRegisters     absolute (APB1Base+$6800);
-  
+
   { BKP }
   BKP: TBKPRegisters     absolute (APB1Base+$6C00);
-  
+
   { PWR }
   PWR: TPwrRegisters     absolute (APB1Base+$7000);
-  
+
   { DAC }
   DAC: TDACRegisters     absolute (APB1Base+$7400);
-  
+
   { ADC }
   ADC1: TADCRegisters      absolute (APB2Base+$2400);
   ADC2: TADCRegisters      absolute (APB2Base+$2800);
   ADC3: TADCRegisters      absolute (APB2Base+$3C00);
-  
+
   { SDIO }
   SDIO: TSDIORegisters   absolute (APB2Base+$8000);
-  
+
   { DMA }
   DMA1: TDMARegisters      absolute (AHBBase+$0000);
   DMA2: TDMARegisters      absolute (AHBBase+$0400);
-  
-  
-  
+
+
+
   { CRC }
   CRC: TCRCRegisters     absolute (AHBBase+$3000);      *)
-    
+
 implementation
 
 procedure NMI_interrupt; external name 'NMI_interrupt';
@@ -552,7 +553,7 @@ interrupt_vectors:
    .long 0                                                     // 0x0034
    .long PendingSV_interrupt                                   // 0x0038
    .long SysTick_interrupt                                     // 0x003C
-   
+
    .long Window_watchdog_interrupt                             // 0x0040
    .long PVD_through_EXTI_Line_detection_interrupt             // 0x0044
    .long Tamper_interrupt                                      // 0x0048
@@ -612,31 +613,31 @@ interrupt_vectors:
    .long DMA2_Channel1_global_interrupt                        // 0x0120
    .long DMA2_Channel2_global_interrupt                        // 0x0124
    .long DMA2_Channel3_global_interrupt                        // 0x0128
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x012C    
-   
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0130    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0134    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0138    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x013C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0140    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0144    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0148    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x014C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0150    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0154    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0158    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x015C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0160    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0164    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0168    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x016C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0170    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0174    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0178    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x017C    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0180    
-   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0184    
-   
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x012C
+
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0130
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0134
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0138
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x013C
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0140
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0144
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0148
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x014C
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0150
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0154
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0158
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x015C
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0160
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0164
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0168
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x016C
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0170
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0174
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0178
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x017C
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0180
+   .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts     // 0x0184
+
    .weak NMI_interrupt
    .weak Hardfault_interrupt
    .weak MemManage_interrupt
@@ -646,7 +647,7 @@ interrupt_vectors:
    .weak DebugMonitor_interrupt
    .weak PendingSV_interrupt
    .weak SysTick_interrupt
-   
+
    .weak Window_watchdog_interrupt
    .weak PVD_through_EXTI_Line_detection_interrupt
    .weak Tamper_interrupt
@@ -708,7 +709,7 @@ interrupt_vectors:
    .weak DMA2_Channel3_global_interrupt
    .weak DMA2_Channel4_and_DMA2_Channel5_global_interrupts
 
-   
+
    .set NMI_interrupt, HaltProc
    .set Hardfault_interrupt, HaltProc
    .set MemManage_interrupt, HaltProc
@@ -779,7 +780,7 @@ interrupt_vectors:
    .set DMA2_Channel2_global_interrupt, HaltProc
    .set DMA2_Channel3_global_interrupt, HaltProc
    .set DMA2_Channel4_and_DMA2_Channel5_global_interrupts, HaltProc
-   
+
    .text
 end;
 

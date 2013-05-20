@@ -7,24 +7,24 @@
 //
 // Copyright (c) 2013 Anton Rieckert (anton@riecktron.co.za)
 //
-// Permission is hereby granted, free of charge, to any person obtaining 
-// a copy of this software and associated documentation files 
-// (the "Software"), to deal in the Software without restriction, 
-// including without limitation the rights to use, copy, modify, merge, 
-// publish, distribute, sublicense, and/or sell copies of the Software, 
-// and to permit persons to whom the Software is furnished to do so, 
+// Permission is hereby granted, free of charge, to any person obtaining
+// a copy of this software and associated documentation files
+// (the "Software"), to deal in the Software without restriction,
+// including without limitation the rights to use, copy, modify, merge,
+// publish, distribute, sublicense, and/or sell copies of the Software,
+// and to permit persons to whom the Software is furnished to do so,
 // subject to the following conditions:
 //
-// The above copyright notice and this permission notice shall be 
+// The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS 
-// BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN 
-// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+// BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //======================================================================
 unit stm32f4xx;
@@ -43,7 +43,7 @@ interface
 const
   PeripheralBase      = $40000000;
   FSMCBase            = $60000000;
-  
+
   APB1Base            = PeripheralBase;
   APB2Base            = PeripheralBase + $00010000;
   AHB1Base            = PeripheralBase + $00020000;
@@ -55,7 +55,7 @@ const
   FSMCBank3Base       = FSMCBase + $20000000;
   FSMCBank4Base       = FSMCBase + $30000000;
   FSMCBankControlBase = FSMCBase + $40000000;
-  
+
 //======================================================================
 // Register type definitions
 //======================================================================
@@ -107,8 +107,7 @@ type
     ODR      : longword;    // 0x14
     BSRR     : longword;    // 0x18
     LCKR     : longword;    // 0x1C
-    AFRL     : longword;    // 0x20
-    AFRH     : longword;    // 0x24
+    AFR      : array[0..1] of longword;    // 0x20, 0x24
   end;
 
 type
@@ -120,44 +119,44 @@ type
     CR2, res5  : word;    // 0x10
     CR3, res6  : word;    // 0x14
     GTPR, res7 : word;    // 0x18
-  end;                    
+  end;
 
 type
   TSPIRegisters = record
-    CR1, res1     : word;
-    CR2, res2     : word; 
-    SR, res3      : word;
-    DR, res4      : word;
-    CRCPR, res5   : word;
-    RXCRCR, res6  : word;
-    TXCRCR, res7  : word;
-    I2SCFGR, res8 : word;
-    I2SPR, res9   : word;
+    CR1, res1     : word;    //0x00
+    CR2, res2     : word;    //0x04
+    SR, res3      : word;    //0x08
+    DR, res4      : word;    //0x0C
+    CRCPR, res5   : word;    //0x10
+    RXCRCR, res6  : word;    //0x14
+    TXCRCR, res7  : word;    //0x18
+    I2SCFGR, res8 : word;    //0x1C
+    I2SPR, res9   : word;    //0x20
   end;
 
 type
   TI2CRegisters = record
-    CR1         : longword;
-    CR2         : longword;
-    OAR1, res1  : word;
-    OAR2, res2  : word;
-    TIMINGR     : longword;
-    TIMEOUTR    : longword;
-    ISR         : longword;
-    ICR, res3   : word;
-    PECR, res4  : word;
-    RXDR, res5  : word;
-    TXDR, res6  : word;
+    CR1         : longword;   //0x00
+    CR2         : longword;   //0x04
+    OAR1, res1  : word;       //0x08
+    OAR2, res2  : word;       //0x0C
+    TIMINGR     : longword;   //0x10
+    TIMEOUTR    : longword;   //0x14
+    ISR         : longword;   //0x18
+    ICR, res3   : word;       //0x1C
+    PECR, res4  : word;       //0x20
+    RXDR, res5  : word;       //0x24
+    TXDR, res6  : word;       //0x28
   end;
 
 type
   TFlashRegisters = record
-    ACR     : longword;  //0x00
-    KEYR    : longword;  //0x04
-    OPTKEYR : longword;  //0x08
-    SR      : longword;  //0x0C
-    CR      : longword;  //0x10
-    OPTCR   : longword;  //0x14
+    ACR     : longword;    //0x00
+    KEYR    : longword;    //0x04
+    OPTKEYR : longword;    //0x08
+    SR      : longword;    //0x0C
+    CR      : longword;    //0x10
+    OPTCR   : longword;    //0x14
   end;
 
   TTimerRegisters = record
@@ -429,7 +428,7 @@ var
 
   AFIO: TAFIORegisters   absolute (APB2Base+$0);
   EXTI: TEXTIRegisters   absolute (APB2Base+$0400);
-  
+
 
   { Timers }
   Timer1: TTimerRegisters  absolute (APB2Base+$2C00);
@@ -440,48 +439,48 @@ var
   Timer6: TTimerRegisters  absolute (APB1Base+$1000);
   Timer7: TTimerRegisters  absolute (APB1Base+$1400);
   Timer8: TTimerRegisters  absolute (APB2Base+$3400);
-  
+
   { RTC }
   RTC: TRTCRegisters       absolute (APB1Base+$2800);
-  
+
   { WDG }
   WWDG: TWWDGRegisters     absolute (APB1Base+$2C00);
   IWDG: TIWDGRegisters     absolute (APB1Base+$3000);
-  
-  
+
+
   { USB }
   USB: TUSBRegisters     absolute (APB1Base+$5C00);
   USBMem: TUSBMem                        absolute (APB1Base+$6000);
-  
+
   { CAN }
   CAN: TCANRegisters     absolute (APB1Base+$6800);
-  
+
   { BKP }
   BKP: TBKPRegisters     absolute (APB1Base+$6C00);
-  
+
   { PWR }
   PWR: TPwrRegisters     absolute (APB1Base+$7000);
-  
+
   { DAC }
   DAC: TDACRegisters     absolute (APB1Base+$7400);
-  
+
   { ADC }
   ADC1: TADCRegisters      absolute (APB2Base+$2400);
   ADC2: TADCRegisters      absolute (APB2Base+$2800);
   ADC3: TADCRegisters      absolute (APB2Base+$3C00);
-  
+
   { SDIO }
   SDIO: TSDIORegisters   absolute (APB2Base+$8000);
-  
+
   { DMA }
   DMA1: TDMARegisters      absolute (AHBBase+$0000);
   DMA2: TDMARegisters      absolute (AHBBase+$0400);
-  
-  
-  
+
+
+
   { CRC }
   CRC: TCRCRegisters     absolute (AHBBase+$3000);      *)
-    
+
 implementation
 
 procedure NMI_interrupt; external name 'NMI_interrupt';
@@ -577,7 +576,7 @@ interrupt_vectors:
    .long 0
    .long PendingSV_interrupt
    .long SysTick_interrupt
-   
+
    .long Window_watchdog_interrupt
    .long PVD_through_EXTI_Line_detection_interrupt
    .long Tamper_interrupt
@@ -638,7 +637,7 @@ interrupt_vectors:
    .long DMA2_Channel2_global_interrupt
    .long DMA2_Channel3_global_interrupt
    .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts
-   
+
    .weak NMI_interrupt
    .weak Hardfault_interrupt
    .weak MemManage_interrupt
@@ -648,7 +647,7 @@ interrupt_vectors:
    .weak DebugMonitor_interrupt
    .weak PendingSV_interrupt
    .weak SysTick_interrupt
-   
+
    .weak Window_watchdog_interrupt
    .weak PVD_through_EXTI_Line_detection_interrupt
    .weak Tamper_interrupt
@@ -710,7 +709,7 @@ interrupt_vectors:
    .weak DMA2_Channel3_global_interrupt
    .weak DMA2_Channel4_and_DMA2_Channel5_global_interrupts
 
-   
+
    .set NMI_interrupt, HaltProc
    .set Hardfault_interrupt, HaltProc
    .set MemManage_interrupt, HaltProc
@@ -781,7 +780,7 @@ interrupt_vectors:
    .set DMA2_Channel2_global_interrupt, HaltProc
    .set DMA2_Channel3_global_interrupt, HaltProc
    .set DMA2_Channel4_and_DMA2_Channel5_global_interrupts, HaltProc
-   
+
    .text
 end;
 
