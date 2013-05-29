@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <Units Count="6">
+      <Unit0>
+        <Filename Value="pp.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pp"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="79"/>
+        <CursorPos X="41" Y="173"/>
+        <UsageCount Value="51"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="arm/aasmcpu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="aasmcpu"/>
+        <UsageCount Value="51"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="arm/aoptcpu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="aoptcpu"/>
+        <UsageCount Value="51"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="aopt.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="aopt"/>
+        <UsageCount Value="51"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="compiler.pas"/>
+        <UnitName Value="compiler"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="125"/>
+        <CursorPos X="10" Y="131"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="fpcdefs.inc"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="213"/>
+        <CursorPos X="36" Y="220"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit5>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="2" HistoryIndex="1">
+      <Position1>
+        <Filename Value="pp.pas"/>
+        <Caret Line="246" Column="21" TopLine="211"/>
+      </Position1>
+      <Position2>
+        <Filename Value="pp.pas"/>
+        <Caret Line="58" Column="8" TopLine="37"/>
+      </Position2>
+    </JumpHistory>
+  </ProjectSession>
+  <EditorMacros Count="0"/>
+</CONFIG>

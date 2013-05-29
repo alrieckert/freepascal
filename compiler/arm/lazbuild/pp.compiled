@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1368710289"/>
+  <Params Value=" -MObjFPC -O1 -Twin32 -Pi386 -g -gl -vei -Se50 -Fi/home/anton/development/fpc/compiler/arm -Fu/home/anton/development/fpc/compiler/arm -Fu/home/anton/development/fpc/compiler/systems -Fu/home/anton/development/fpc/compiler/ -FU/home/anton/development/fpc/compiler/arm/lazbuild/ -l -FE/home/anton/development/fpc/compiler/arm/ -darm pp.pas"/>
+</CONFIG>
