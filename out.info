@@ -1,0 +1,1743 @@
+make -C compiler distclean
+make[1]: Entering directory `/home/anton/development/fpc/compiler'
+/bin/rm -f ppcrossarm ppc ppc1.exe ppc2.exe ppc3.exe ./msg2inc.exe pp1.wpo pp2.wpo
+/bin/rm -f ppc386.exe ppc68k.exe ppcx64.exe ppcppc.exe ppcsparc.exe ppcppc64.exe ppcarm.exe ppcmips.exe ppcmipsel.exe ppcjvm.exe ppc8086.exe ppcarm.exe ppcwpo1.exe ppcwpo2.exe
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make -C utils cleanall
+make[2]: Entering directory `/home/anton/development/fpc/compiler/utils'
+/bin/rm -f units/arm-embedded/ppu.ppu units/arm-embedded/crc.ppu units/arm-embedded/usubst.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/compiler/utils'
+/bin/rm -rf i386/units
+/bin/rm -f i386/*.o i386/*.ppu i386/*.rst i386/*.s i386/*.a i386/*.so i386/*.ppl
+/bin/rm -f i386/ppc386.exe i386/ppc68k.exe i386/ppcx64.exe i386/ppcppc.exe i386/ppcsparc.exe i386/ppcppc64.exe i386/ppcarm.exe i386/ppcmips.exe i386/ppcmipsel.exe i386/ppcjvm.exe i386/ppc8086.exe i386/ppcarm.exe
+/bin/rm -rf powerpc/units
+/bin/rm -f powerpc/*.o powerpc/*.ppu powerpc/*.rst powerpc/*.s powerpc/*.a powerpc/*.so powerpc/*.ppl
+/bin/rm -f powerpc/ppc386.exe powerpc/ppc68k.exe powerpc/ppcx64.exe powerpc/ppcppc.exe powerpc/ppcsparc.exe powerpc/ppcppc64.exe powerpc/ppcarm.exe powerpc/ppcmips.exe powerpc/ppcmipsel.exe powerpc/ppcjvm.exe powerpc/ppc8086.exe powerpc/ppcarm.exe
+/bin/rm -rf sparc/units
+/bin/rm -f sparc/*.o sparc/*.ppu sparc/*.rst sparc/*.s sparc/*.a sparc/*.so sparc/*.ppl
+/bin/rm -f sparc/ppc386.exe sparc/ppc68k.exe sparc/ppcx64.exe sparc/ppcppc.exe sparc/ppcsparc.exe sparc/ppcppc64.exe sparc/ppcarm.exe sparc/ppcmips.exe sparc/ppcmipsel.exe sparc/ppcjvm.exe sparc/ppc8086.exe sparc/ppcarm.exe
+/bin/rm -rf arm/units
+/bin/rm -f arm/*.o arm/*.ppu arm/*.rst arm/*.s arm/*.a arm/*.so arm/*.ppl
+/bin/rm -f arm/ppc386.exe arm/ppc68k.exe arm/ppcx64.exe arm/ppcppc.exe arm/ppcsparc.exe arm/ppcppc64.exe arm/ppcarm.exe arm/ppcmips.exe arm/ppcmipsel.exe arm/ppcjvm.exe arm/ppc8086.exe arm/ppcarm.exe
+/bin/rm -rf x86_64/units
+/bin/rm -f x86_64/*.o x86_64/*.ppu x86_64/*.rst x86_64/*.s x86_64/*.a x86_64/*.so x86_64/*.ppl
+/bin/rm -f x86_64/ppc386.exe x86_64/ppc68k.exe x86_64/ppcx64.exe x86_64/ppcppc.exe x86_64/ppcsparc.exe x86_64/ppcppc64.exe x86_64/ppcarm.exe x86_64/ppcmips.exe x86_64/ppcmipsel.exe x86_64/ppcjvm.exe x86_64/ppc8086.exe x86_64/ppcarm.exe
+/bin/rm -rf powerpc64/units
+/bin/rm -f powerpc64/*.o powerpc64/*.ppu powerpc64/*.rst powerpc64/*.s powerpc64/*.a powerpc64/*.so powerpc64/*.ppl
+/bin/rm -f powerpc64/ppc386.exe powerpc64/ppc68k.exe powerpc64/ppcx64.exe powerpc64/ppcppc.exe powerpc64/ppcsparc.exe powerpc64/ppcppc64.exe powerpc64/ppcarm.exe powerpc64/ppcmips.exe powerpc64/ppcmipsel.exe powerpc64/ppcjvm.exe powerpc64/ppc8086.exe powerpc64/ppcarm.exe
+/bin/rm -rf m68k/units
+/bin/rm -f m68k/*.o m68k/*.ppu m68k/*.rst m68k/*.s m68k/*.a m68k/*.so m68k/*.ppl
+/bin/rm -f m68k/ppc386.exe m68k/ppc68k.exe m68k/ppcx64.exe m68k/ppcppc.exe m68k/ppcsparc.exe m68k/ppcppc64.exe m68k/ppcarm.exe m68k/ppcmips.exe m68k/ppcmipsel.exe m68k/ppcjvm.exe m68k/ppc8086.exe m68k/ppcarm.exe
+/bin/rm -rf armeb/units
+/bin/rm -f armeb/*.o armeb/*.ppu armeb/*.rst armeb/*.s armeb/*.a armeb/*.so armeb/*.ppl
+/bin/rm -f armeb/ppc386.exe armeb/ppc68k.exe armeb/ppcx64.exe armeb/ppcppc.exe armeb/ppcsparc.exe armeb/ppcppc64.exe armeb/ppcarm.exe armeb/ppcmips.exe armeb/ppcmipsel.exe armeb/ppcjvm.exe armeb/ppc8086.exe armeb/ppcarm.exe
+/bin/rm -rf mipsel/units
+/bin/rm -f mipsel/*.o mipsel/*.ppu mipsel/*.rst mipsel/*.s mipsel/*.a mipsel/*.so mipsel/*.ppl
+/bin/rm -f mipsel/ppc386.exe mipsel/ppc68k.exe mipsel/ppcx64.exe mipsel/ppcppc.exe mipsel/ppcsparc.exe mipsel/ppcppc64.exe mipsel/ppcarm.exe mipsel/ppcmips.exe mipsel/ppcmipsel.exe mipsel/ppcjvm.exe mipsel/ppc8086.exe mipsel/ppcarm.exe
+/bin/rm -rf mips/units
+/bin/rm -f mips/*.o mips/*.ppu mips/*.rst mips/*.s mips/*.a mips/*.so mips/*.ppl
+/bin/rm -f mips/ppc386.exe mips/ppc68k.exe mips/ppcx64.exe mips/ppcppc.exe mips/ppcsparc.exe mips/ppcppc64.exe mips/ppcarm.exe mips/ppcmips.exe mips/ppcmipsel.exe mips/ppcjvm.exe mips/ppc8086.exe mips/ppcarm.exe
+/bin/rm -rf avr/units
+/bin/rm -f avr/*.o avr/*.ppu avr/*.rst avr/*.s avr/*.a avr/*.so avr/*.ppl
+/bin/rm -f avr/ppc386.exe avr/ppc68k.exe avr/ppcx64.exe avr/ppcppc.exe avr/ppcsparc.exe avr/ppcppc64.exe avr/ppcarm.exe avr/ppcmips.exe avr/ppcmipsel.exe avr/ppcjvm.exe avr/ppc8086.exe avr/ppcarm.exe
+/bin/rm -rf jvm/units
+/bin/rm -f jvm/*.o jvm/*.ppu jvm/*.rst jvm/*.s jvm/*.a jvm/*.so jvm/*.ppl
+/bin/rm -f jvm/ppc386.exe jvm/ppc68k.exe jvm/ppcx64.exe jvm/ppcppc.exe jvm/ppcsparc.exe jvm/ppcppc64.exe jvm/ppcarm.exe jvm/ppcmips.exe jvm/ppcmipsel.exe jvm/ppcjvm.exe jvm/ppc8086.exe jvm/ppcarm.exe
+/bin/rm -rf i8086/units
+/bin/rm -f i8086/*.o i8086/*.ppu i8086/*.rst i8086/*.s i8086/*.a i8086/*.so i8086/*.ppl
+/bin/rm -f i8086/ppc386.exe i8086/ppc68k.exe i8086/ppcx64.exe i8086/ppcppc.exe i8086/ppcsparc.exe i8086/ppcppc64.exe i8086/ppcarm.exe i8086/ppcmips.exe i8086/ppcmipsel.exe i8086/ppcjvm.exe i8086/ppc8086.exe i8086/ppcarm.exe
+make -C utils distclean
+make[2]: Entering directory `/home/anton/development/fpc/compiler/utils'
+/bin/rm -f units/arm-embedded/ppu.ppu units/arm-embedded/crc.ppu units/arm-embedded/usubst.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/compiler/utils'
+make[1]: Leaving directory `/home/anton/development/fpc/compiler'
+make -C rtl distclean
+make[1]: Entering directory `/home/anton/development/fpc/rtl'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make -C embedded cleanall
+make[2]: Entering directory `/home/anton/development/fpc/rtl/embedded'
+/bin/rm -f /home/anton/development/fpc/rtl/units/arm-embedded/system.ppu /home/anton/development/fpc/rtl/units/arm-embedded/lm4f120.ppu /home/anton/development/fpc/rtl/units/arm-embedded/xmc4500.ppu /home/anton/development/fpc/rtl/units/arm-embedded/cortexm3.ppu /home/anton/development/fpc/rtl/units/arm-embedded/cortexm4.ppu /home/anton/development/fpc/rtl/units/arm-embedded/uuchar.ppu /home/anton/development/fpc/rtl/units/arm-embedded/objpas.ppu /home/anton/development/fpc/rtl/units/arm-embedded/heapmgr.ppu /home/anton/development/fpc/rtl/units/arm-embedded/consoleio.ppu /home/anton/development/fpc/rtl/units/arm-embedded/sysutils.ppu /home/anton/development/fpc/rtl/units/arm-embedded/sysconst.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/rtl/embedded'
+make -C embedded distclean
+make[2]: Entering directory `/home/anton/development/fpc/rtl/embedded'
+/bin/rm -f /home/anton/development/fpc/rtl/units/arm-embedded/system.ppu /home/anton/development/fpc/rtl/units/arm-embedded/lm4f120.ppu /home/anton/development/fpc/rtl/units/arm-embedded/xmc4500.ppu /home/anton/development/fpc/rtl/units/arm-embedded/cortexm3.ppu /home/anton/development/fpc/rtl/units/arm-embedded/cortexm4.ppu /home/anton/development/fpc/rtl/units/arm-embedded/uuchar.ppu /home/anton/development/fpc/rtl/units/arm-embedded/objpas.ppu /home/anton/development/fpc/rtl/units/arm-embedded/heapmgr.ppu /home/anton/development/fpc/rtl/units/arm-embedded/consoleio.ppu /home/anton/development/fpc/rtl/units/arm-embedded/sysutils.ppu /home/anton/development/fpc/rtl/units/arm-embedded/sysconst.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/rtl/embedded'
+make[1]: Leaving directory `/home/anton/development/fpc/rtl'
+make -C utils distclean
+make[1]: Entering directory `/home/anton/development/fpc/utils'
+/bin/rm -f units/arm-embedded/ptopu.ppu
+/bin/rm -f units/arm-embedded/rstconv.rst
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make -C fppkg cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/fppkg'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fppkg'
+make -C fpcm cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/fpcm'
+/bin/rm -f units/arm-embedded/fpcmmain.ppu units/arm-embedded/fpcmdic.ppu units/arm-embedded/fpcmwr.ppu units/arm-embedded/fpcmpkg.ppu
+/bin/rm -f units/arm-embedded/fpcmmain.rst
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fpcm'
+make -C tply cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/tply'
+/bin/rm -f units/arm-embedded/lexlib.ppu units/arm-embedded/yacclib.ppu units/arm-embedded/lexbase.ppu units/arm-embedded/lexopt.ppu units/arm-embedded/lexdfa.ppu units/arm-embedded/lexpos.ppu units/arm-embedded/lexlist.ppu units/arm-embedded/lexrules.ppu units/arm-embedded/lexmsgs.ppu units/arm-embedded/lextable.ppu units/arm-embedded/yaccbase.ppu units/arm-embedded/yaccmsgs.ppu units/arm-embedded/yaccclos.ppu units/arm-embedded/yaccpars.ppu units/arm-embedded/yacclook.ppu units/arm-embedded/yaccsem.ppu units/arm-embedded/yacclr0.ppu units/arm-embedded/yacctabl.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/tply'
+make -C h2pas cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/h2pas'
+/bin/rm -f units/arm-embedded/h2poptions.ppu units/arm-embedded/h2plexlib.ppu units/arm-embedded/scan.ppu units/arm-embedded/h2pyacclib.ppu units/arm-embedded/converu.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/h2pas'
+make -C fprcp cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/fprcp'
+/bin/rm -f units/arm-embedded/comments.ppu units/arm-embedded/expr.ppu units/arm-embedded/pasprep.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fprcp'
+make -C dxegen cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/dxegen'
+/bin/rm -f units/arm-embedded/coff.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/dxegen'
+make -C fpdoc cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/fpdoc'
+/bin/rm -f units/arm-embedded/dglobals.ppu units/arm-embedded/dwriter.ppu units/arm-embedded/dw_xml.ppu units/arm-embedded/sh_pas.ppu units/arm-embedded/dw_html.ppu units/arm-embedded/dw_latex.ppu units/arm-embedded/dw_ipf.ppu units/arm-embedded/dw_txt.ppu units/arm-embedded/dw_man.ppu units/arm-embedded/dwlinear.ppu units/arm-embedded/dw_linrtf.ppu units/arm-embedded/dw_dxml.ppu units/arm-embedded/fpdocproj.ppu units/arm-embedded/fpdocxmlopts.ppu units/arm-embedded/mkfpdoc.ppu
+/bin/rm -f dwriter.rst fpdoc.rst dglobals.rst makeskel.rst fpdocopts.rst
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fpdoc'
+make -C fpcmkcfg cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/fpcmkcfg'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fpcmkcfg'
+make -C pas2ut cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/pas2ut'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/pas2ut'
+make -C pas2fpm cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/pas2fpm'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/pas2fpm'
+make -C pas2jni cleanall
+make[2]: Entering directory `/home/anton/development/fpc/utils/pas2jni'
+/bin/rm -f units/arm-embedded/pas2jni.ppu units/arm-embedded/def.ppu units/arm-embedded/ppuparser.ppu units/arm-embedded/writer.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/pas2jni'
+make -C fppkg distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/fppkg'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fppkg'
+make -C fpcm distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/fpcm'
+/bin/rm -f units/arm-embedded/fpcmmain.ppu units/arm-embedded/fpcmdic.ppu units/arm-embedded/fpcmwr.ppu units/arm-embedded/fpcmpkg.ppu
+/bin/rm -f units/arm-embedded/fpcmmain.rst
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fpcm'
+make -C tply distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/tply'
+/bin/rm -f units/arm-embedded/lexlib.ppu units/arm-embedded/yacclib.ppu units/arm-embedded/lexbase.ppu units/arm-embedded/lexopt.ppu units/arm-embedded/lexdfa.ppu units/arm-embedded/lexpos.ppu units/arm-embedded/lexlist.ppu units/arm-embedded/lexrules.ppu units/arm-embedded/lexmsgs.ppu units/arm-embedded/lextable.ppu units/arm-embedded/yaccbase.ppu units/arm-embedded/yaccmsgs.ppu units/arm-embedded/yaccclos.ppu units/arm-embedded/yaccpars.ppu units/arm-embedded/yacclook.ppu units/arm-embedded/yaccsem.ppu units/arm-embedded/yacclr0.ppu units/arm-embedded/yacctabl.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/tply'
+make -C h2pas distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/h2pas'
+/bin/rm -f units/arm-embedded/h2poptions.ppu units/arm-embedded/h2plexlib.ppu units/arm-embedded/scan.ppu units/arm-embedded/h2pyacclib.ppu units/arm-embedded/converu.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/h2pas'
+make -C fprcp distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/fprcp'
+/bin/rm -f units/arm-embedded/comments.ppu units/arm-embedded/expr.ppu units/arm-embedded/pasprep.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fprcp'
+make -C dxegen distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/dxegen'
+/bin/rm -f units/arm-embedded/coff.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/dxegen'
+make -C fpdoc distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/fpdoc'
+/bin/rm -f units/arm-embedded/dglobals.ppu units/arm-embedded/dwriter.ppu units/arm-embedded/dw_xml.ppu units/arm-embedded/sh_pas.ppu units/arm-embedded/dw_html.ppu units/arm-embedded/dw_latex.ppu units/arm-embedded/dw_ipf.ppu units/arm-embedded/dw_txt.ppu units/arm-embedded/dw_man.ppu units/arm-embedded/dwlinear.ppu units/arm-embedded/dw_linrtf.ppu units/arm-embedded/dw_dxml.ppu units/arm-embedded/fpdocproj.ppu units/arm-embedded/fpdocxmlopts.ppu units/arm-embedded/mkfpdoc.ppu
+/bin/rm -f dwriter.rst fpdoc.rst dglobals.rst makeskel.rst fpdocopts.rst
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fpdoc'
+make -C fpcmkcfg distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/fpcmkcfg'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/fpcmkcfg'
+make -C pas2ut distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/pas2ut'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/pas2ut'
+make -C pas2fpm distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/pas2fpm'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/pas2fpm'
+make -C pas2jni distclean
+make[2]: Entering directory `/home/anton/development/fpc/utils/pas2jni'
+/bin/rm -f units/arm-embedded/pas2jni.ppu units/arm-embedded/def.ppu units/arm-embedded/ppuparser.ppu units/arm-embedded/writer.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/utils/pas2jni'
+make[1]: Leaving directory `/home/anton/development/fpc/utils'
+make -C packages distclean
+make[1]: Entering directory `/home/anton/development/fpc/packages'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make -C a52 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/a52'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/a52'
+make -C amunits distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/amunits'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/amunits'
+make -C aspell distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/aspell'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/aspell'
+make -C bfd distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/bfd'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/bfd'
+make -C bzip2 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/bzip2'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/bzip2'
+make -C cairo distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/cairo'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/cairo'
+make -C cdrom distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/cdrom'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/cdrom'
+make -C chm distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/chm'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/chm'
+make -C cocoaint distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/cocoaint'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/cocoaint'
+make -C dblib distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/dblib'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/dblib'
+make -C dbus distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/dbus'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/dbus'
+make -C dts distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/dts'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/dts'
+make -C fastcgi distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fastcgi'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fastcgi'
+make -C fcl-async distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-async'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-async'
+make -C fcl-base distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-base'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-base'
+make -C fcl-db distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-db'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-db'
+make -C fcl-extra distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-extra'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-extra'
+make -C fcl-fpcunit distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-fpcunit'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-fpcunit'
+make -C fcl-image distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-image'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-image'
+make -C fcl-js distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-js'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-js'
+make -C fcl-json distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-json'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-json'
+make -C fcl-net distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-net'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-net'
+make -C fcl-passrc distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-passrc'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-passrc'
+make -C fcl-process distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-process'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-process'
+make -C fcl-registry distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-registry'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-registry'
+make -C fcl-res distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-res'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-res'
+make -C fcl-sdo distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-sdo'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-sdo'
+make -C fcl-stl distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-stl'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-stl'
+make -C fcl-web distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-web'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-web'
+make -C fcl-xml distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fcl-xml'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fcl-xml'
+make -C fftw distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fftw'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fftw'
+make -C fpgtk distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fpgtk'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fpgtk'
+make -C fpindexer distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fpindexer'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fpindexer'
+make -C fpmkunit distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fpmkunit'
+/bin/rm -f units_bs/x86_64-linux/fpmkunit.ppu units_bs/x86_64-linux/fpmkunit.rst units_bs/x86_64-linux/fpmkunit.o units_bs/x86_64-linux/adler.ppu units_bs/x86_64-linux/adler.o units_bs/x86_64-linux/crc.o units_bs/x86_64-linux/crc.ppu units_bs/x86_64-linux/gzio.ppu units_bs/x86_64-linux/gzio.o units_bs/x86_64-linux/infblock.o units_bs/x86_64-linux/infblock.ppu units_bs/x86_64-linux/infcodes.ppu units_bs/x86_64-linux/infcodes.o units_bs/x86_64-linux/inffast.o units_bs/x86_64-linux/inffast.ppu units_bs/x86_64-linux/inftrees.ppu units_bs/x86_64-linux/inftrees.o units_bs/x86_64-linux/infutil.o units_bs/x86_64-linux/infutil.ppu units_bs/x86_64-linux/pipes.ppu units_bs/x86_64-linux/pipes.o units_bs/x86_64-linux/process.o units_bs/x86_64-linux/process.ppu units_bs/x86_64-linux/process.rst units_bs/x86_64-linux/trees.ppu units_bs/x86_64-linux/trees.o units_bs/x86_64-linux/zbase.o units_bs/x86_64-linux/zbase.ppu units_bs/x86_64-linux/zbase.rst units_bs/x86_64-linux/zdeflate.ppu units_bs/x86_64-linux/zdeflate.o units_bs/x86_64-linux/zinflate.o units_bs/x86_64-linux/zinflate.ppu units_bs/x86_64-linux/libtar.ppu units_bs/x86_64-linux/libtar.o units_bs/x86_64-linux/zipper.ppu units_bs/x86_64-linux/zipper.o units_bs/x86_64-linux/zipper.rst units_bs/x86_64-linux/zstream.o units_bs/x86_64-linux/zstream.ppu units_bs/x86_64-linux/zstream.rst
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+/bin/rm -rf units_bs
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fpmkunit'
+make -C fppkg distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fppkg'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fppkg'
+make -C fuse distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fuse'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fuse'
+make -C fv distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/fv'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fv'
+make -C gdbint distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/gdbint'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/gdbint'
+make -C gdbm distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/gdbm'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/gdbm'
+make -C ggi distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/ggi'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/ggi'
+make -C gmp distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/gmp'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/gmp'
+make -C gnome1 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/gnome1'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/gnome1'
+make -C graph distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/graph'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/graph'
+make -C gtk1 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/gtk1'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/gtk1'
+make -C gtk2 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/gtk2'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/gtk2'
+make -C hash distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/hash'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/hash'
+make -C hermes distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/hermes'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/hermes'
+make -C httpd13 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/httpd13'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/httpd13'
+make -C httpd20 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/httpd20'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/httpd20'
+make -C httpd22 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/httpd22'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/httpd22'
+make -C httpd24 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/httpd24'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/httpd24'
+make -C ibase distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/ibase'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/ibase'
+make -C iconvenc distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/iconvenc'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/iconvenc'
+make -C imagemagick distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/imagemagick'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/imagemagick'
+make -C imlib distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/imlib'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/imlib'
+make -C jni distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/jni'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/jni'
+make -C ldap distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/ldap'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/ldap'
+make -C libc distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libc'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libc'
+make -C libcurl distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libcurl'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libcurl'
+make -C libgbafpc distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libgbafpc'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libgbafpc'
+make -C libgd distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libgd'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libgd'
+make -C libndsfpc distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libndsfpc'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libndsfpc'
+make -C libogcfpc distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libogcfpc'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libogcfpc'
+make -C libpng distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libpng'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libpng'
+make -C librsvg distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/librsvg'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/librsvg'
+make -C libsee distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libsee'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libsee'
+make -C libtar distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libtar'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libtar'
+make -C libvlc distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libvlc'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libvlc'
+make -C libxml distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/libxml'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/libxml'
+make -C lua distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/lua'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/lua'
+make -C mad distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/mad'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/mad'
+make -C matroska distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/matroska'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/matroska'
+make -C modplug distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/modplug'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/modplug'
+make -C mysql distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/mysql'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/mysql'
+make -C ncurses distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/ncurses'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/ncurses'
+make -C newt distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/newt'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/newt'
+make -C numlib distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/numlib'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/numlib'
+make -C nvapi distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/nvapi'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/nvapi'
+make -C objcrtl distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/objcrtl'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/objcrtl'
+make -C odbc distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/odbc'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/odbc'
+make -C oggvorbis distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/oggvorbis'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/oggvorbis'
+make -C openal distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/openal'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/openal'
+make -C opencl distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/opencl'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/opencl'
+make -C opengles distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/opengles'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/opengles'
+make -C opengl distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/opengl'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/opengl'
+make -C openssl distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/openssl'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/openssl'
+make -C oracle distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/oracle'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/oracle'
+make -C os2units distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/os2units'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/os2units'
+make -C palmunits distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/palmunits'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/palmunits'
+make -C pasjpeg distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/pasjpeg'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/pasjpeg'
+make -C paszlib distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/paszlib'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/paszlib'
+make -C pcap distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/pcap'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/pcap'
+make -C postgres distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/postgres'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/postgres'
+make -C proj4 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/proj4'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/proj4'
+make -C ptc distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/ptc'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/ptc'
+make -C pthreads distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/pthreads'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/pthreads'
+make -C pxlib distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/pxlib'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/pxlib'
+make -C regexpr distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/regexpr'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/regexpr'
+make -C rexx distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/rexx'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/rexx'
+make -C sdl distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/sdl'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/sdl'
+make -C sndfile distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/sndfile'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/sndfile'
+make -C sqlite distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/sqlite'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/sqlite'
+make -C svgalib distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/svgalib'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/svgalib'
+make -C symbolic distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/symbolic'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/symbolic'
+make -C syslog distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/syslog'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/syslog'
+make -C tcl distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/tcl'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/tcl'
+make -C univint distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/univint'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/univint'
+make -C unixutil distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/unixutil'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/unixutil'
+make -C unzip distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/unzip'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/unzip'
+make -C users distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/users'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/users'
+make -C utmp distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/utmp'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/utmp'
+make -C uuid distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/uuid'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/uuid'
+make -C winceunits distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/winceunits'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/winceunits'
+make -C winunits-base distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/winunits-base'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/winunits-base'
+make -C winunits-jedi distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/winunits-jedi'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/winunits-jedi'
+make -C x11 distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/x11'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/x11'
+make -C xforms distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/xforms'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/xforms'
+make -C zlib distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/zlib'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/zlib'
+make -C zorba distclean
+make[2]: Entering directory `/home/anton/development/fpc/packages/zorba'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/packages/zorba'
+make -C fpmkunit clean_bootstrap
+make[2]: Entering directory `/home/anton/development/fpc/packages/fpmkunit'
+/bin/rm -rf units_bs
+make[2]: Leaving directory `/home/anton/development/fpc/packages/fpmkunit'
+make[1]: Leaving directory `/home/anton/development/fpc/packages'
+make -C ide distclean
+make[1]: Entering directory `/home/anton/development/fpc/ide'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make -C compiler cleanall
+make[2]: Entering directory `/home/anton/development/fpc/ide/compiler'
+/bin/rm -f /home/anton/development/fpc/ide/units/arm-embedded/compunit.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/ide/compiler'
+make -C compiler clean
+make[2]: Entering directory `/home/anton/development/fpc/ide/compiler'
+/bin/rm -f /home/anton/development/fpc/ide/units/arm-embedded/compunit.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[2]: Leaving directory `/home/anton/development/fpc/ide/compiler'
+make[1]: Leaving directory `/home/anton/development/fpc/ide'
+make -C installer distclean
+make[1]: Entering directory `/home/anton/development/fpc/installer'
+/bin/rm -f units/arm-embedded/scroll.ppu units/arm-embedded/insthelp.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.bat
+make[1]: Leaving directory `/home/anton/development/fpc/installer'
+/bin/rm -f build-stamp.*
+/bin/rm -f base.build-stamp.*
+make compiler_cycle RELEASE=1
+make[1]: Entering directory `/home/anton/development/fpc'
+make -C compiler cycle
+make[2]: Entering directory `/home/anton/development/fpc/compiler'
+make OS_TARGET=linux CPU_TARGET=x86_64 CROSSBINDIR= BINUTILSPREFIX= CROSSCYCLEBOOTSTRAP=1 rtlclean rtl CYCLELEVEL=1
+make[3]: Entering directory `/home/anton/development/fpc/compiler'
+make -C /home/anton/development/fpc/rtl clean
+make[4]: Entering directory `/home/anton/development/fpc/rtl'
+/bin/rm -f fpcmade.x86_64-linux Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *.s *_ppas.sh
+make -C linux clean
+make[5]: Entering directory `/home/anton/development/fpc/rtl/linux'
+/bin/rm -f /home/anton/development/fpc/rtl/units/x86_64-linux/prt0.o /home/anton/development/fpc/rtl/units/x86_64-linux/dllprt0.o /home/anton/development/fpc/rtl/units/x86_64-linux/cprt0.o /home/anton/development/fpc/rtl/units/x86_64-linux/gprt0.o
+/bin/rm -f /home/anton/development/fpc/rtl/units/x86_64-linux/system.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fpintres.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/uuchar.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unixtype.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/ctypes.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/baseunix.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/strings.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/objpas.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/macpas.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/iso7185.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/syscall.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unixutil.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/heaptrc.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/lineinfo.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/lnfodwrf.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/termio.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unix.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/linux.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/initc.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cmem.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/x86.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/ports.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cpu.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/crt.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/printer.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/linuxvcs.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/sysutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/typinfo.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/math.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/matrix.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/varutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/charset.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cpall.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/buildcollations.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/character.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unixcp.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/ucomplex.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/getopts.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/errors.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/sockets.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/gpm.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/ipc.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/serial.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/terminfo.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/dl.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/dynlibs.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/video.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/mouse.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/keyboard.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/variants.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/types.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/dateutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/sysconst.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fmtbcd.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fpwidestring.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cthreads.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/classes.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fgl.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/convutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/stdconvs.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/strutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/rtlconsts.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/dos.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/objects.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cwstring.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fpcylix.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/clocale.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/exeinfo.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1250.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1251.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1252.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1253.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1254.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1255.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1256.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1257.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1258.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp437.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp646.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp850.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp866.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp874.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp932.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp936.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp949.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp950.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp8859_1.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp8859_5.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unicodedata.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unicodeducet.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unicodenumtable.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_de.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_es.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_fr_ca.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_ja.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_ko.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_ru.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_sv.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_zh.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/syslinux.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/linux.ppu
+/bin/rm -f /home/anton/development/fpc/rtl/units/x86_64-linux/math.rst /home/anton/development/fpc/rtl/units/x86_64-linux/varutils.rst /home/anton/development/fpc/rtl/units/x86_64-linux/typinfo.rst /home/anton/development/fpc/rtl/units/x86_64-linux/variants.rst /home/anton/development/fpc/rtl/units/x86_64-linux/sysconst.rst /home/anton/development/fpc/rtl/units/x86_64-linux/rtlconsts.rst /home/anton/development/fpc/rtl/units/x86_64-linux/stdconvs.rst
+/bin/rm -f fpcmade.x86_64-linux Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *.s *_ppas.sh
+make[5]: Leaving directory `/home/anton/development/fpc/rtl/linux'
+make[4]: Leaving directory `/home/anton/development/fpc/rtl'
+make -C /home/anton/development/fpc/rtl 'OPT=  ' all
+make[4]: Entering directory `/home/anton/development/fpc/rtl'
+make -C linux all
+make[5]: Entering directory `/home/anton/development/fpc/rtl/linux'
+/bin/mkdir -p /home/anton/development/fpc/rtl/units/x86_64-linux
+as --64 -o /home/anton/development/fpc/rtl/units/x86_64-linux/prt0.o x86_64/prt0.as
+as --64  -o /home/anton/development/fpc/rtl/units/x86_64-linux/dllprt0.o x86_64/dllprt0.as
+as --64 -o /home/anton/development/fpc/rtl/units/x86_64-linux/cprt0.o x86_64/cprt0.as
+as --64 -o /home/anton/development/fpc/rtl/units/x86_64-linux/gprt0.o x86_64/gprt0.as
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Us -Sg system.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/fpintres.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/uuchar.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/unixtype.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/ctypes.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/baseunix.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/strings.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -I../objpas ../objpas/objpas.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/unix.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/errors.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/sysconst.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fi../objpas/sysutils ../unix/sysutils.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/math.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/macpas.pp 
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/iso7185.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/syscall.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/unixutil.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Sg ../inc/heaptrc.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/lineinfo.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/lnfodwrf.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE termio.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE linux.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/initc.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/cmem.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/x86.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/ports.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../x86_64/cpu.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/crt.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/printer.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE linuxvcs.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/rtlconsts.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Sg ../objpas/typinfo.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/matrix.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -I../objpas ../unix/varutils.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/charset.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fu../inc -Fi../charmaps ../charmaps/cpall.pas
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fu../objpas -Fi../objpas/collations -I../objpas/collations ../objpas/collations/buildcollations.pas
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/character.pas
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/unixcp.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/ucomplex.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/getopts.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/sockets.pp
+sockets.inc(371,14) Warning: Symbol "htonl" is deprecated
+sockets.inc(377,14) Warning: Symbol "NToHl" is deprecated
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE gpm.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/ipc.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/serial.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/terminfo.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/dl.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/dynlibs.pas
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/video.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/mouse.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/keyboard.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fi../inc ../inc/variants.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/types.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -I../objpas ../objpas/dateutils.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/fgl.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fi../objpas/classes ../unix/classes.pp
+tthread.inc(226,19) Warning: Symbol "Resume" is deprecated
+tthread.inc(243,5) Warning: Symbol "Suspend" is deprecated
+tthread.inc(244,13) Warning: Symbol "Resume" is deprecated
+classes.inc(212,9) Warning: Symbol "Resume" is deprecated
+classes.inc(229,11) Warning: Symbol "Resume" is deprecated
+classes.inc(591,13) Warning: Symbol "GetTickCount" is deprecated: "Use GetTickCount64 instead"
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/fmtbcd.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/fpwidestring.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/cthreads.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/convutils.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/stdconvs.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/strutils.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/dos.pp
+dos.pp(236,9) Warning: Symbol "weekday" is not portable
+dos.pp(592,6) Warning: Symbol "UnixDateToDt" is not portable
+dos.pp(816,4) Warning: Symbol "UnixDateToDt" is not portable
+dos.pp(832,16) Warning: Symbol "DTToUnixDate" is not portable
+dos.pp(889,6) Warning: Symbol "FpGetEnv" is deprecated
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/objects.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/cwstring.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE fpcylix.pp
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/clocale.pp
+make[5]: Leaving directory `/home/anton/development/fpc/rtl/linux'
+make[4]: Leaving directory `/home/anton/development/fpc/rtl'
+make[3]: Leaving directory `/home/anton/development/fpc/compiler'
+make OS_TARGET=linux CPU_TARGET=x86_64 EXENAME=ppc CROSSBINDIR= BINUTILSPREFIX= CROSSCYCLEBOOTSTRAP=1 cycleclean compiler CYCLELEVEL=1
+make[3]: Entering directory `/home/anton/development/fpc/compiler'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.sh
+make -C utils cleanall
+make[4]: Entering directory `/home/anton/development/fpc/compiler/utils'
+/bin/rm -f units/x86_64-linux/ppu.ppu units/x86_64-linux/crc.ppu units/x86_64-linux/usubst.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.sh
+make[4]: Leaving directory `/home/anton/development/fpc/compiler/utils'
+/bin/rm -rf x86_64/units
+/bin/rm -f x86_64/*.o x86_64/*.ppu x86_64/*.rst x86_64/*.s x86_64/*.a x86_64/*.so x86_64/*.ppl
+/bin/rm -f x86_64/ppc386 x86_64/ppc68k x86_64/ppcx64 x86_64/ppcppc x86_64/ppcsparc x86_64/ppcppc64 x86_64/ppcarm x86_64/ppcmips x86_64/ppcmipsel x86_64/ppcjvm x86_64/ppc8086 x86_64/ppc
+/bin/rm -f ppc
+/bin/mkdir -p x86_64/units/x86_64-linux
+/usr/lib/fpc/2.6.0/ppcx64 -Ur -Xs -O2 -n -Fux86_64 -Fusystems -Fu/home/anton/development/fpc/rtl/units/x86_64-linux -Fix86_64 -FE. -FUx86_64/units/x86_64-linux -Cg -dRELEASE    -dx86_64 -dGDB -dBROWSERLOG -Fux86 -Sew pp.pas
+/bin/mv -f ./pp ppc
+make[3]: Leaving directory `/home/anton/development/fpc/compiler'
+make 'FPC=/home/anton/development/fpc/compiler/ppc' OS_TARGET=linux CPU_TARGET=x86_64 CROSSBINDIR= BINUTILSPREFIX= CROSSCYCLEBOOTSTRAP=1 rtlclean rtl CYCLELEVEL=‚
+make[3]: Entering directory `/home/anton/development/fpc/compiler'
+make -C /home/anton/development/fpc/rtl clean
+make[4]: Entering directory `/home/anton/development/fpc/rtl'
+/bin/rm -f fpcmade.x86_64-linux Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *.s *_ppas.sh
+make -C linux clean
+make[5]: Entering directory `/home/anton/development/fpc/rtl/linux'
+/bin/rm -f /home/anton/development/fpc/rtl/units/x86_64-linux/prt0.o /home/anton/development/fpc/rtl/units/x86_64-linux/dllprt0.o /home/anton/development/fpc/rtl/units/x86_64-linux/cprt0.o /home/anton/development/fpc/rtl/units/x86_64-linux/gprt0.o
+/bin/rm -f /home/anton/development/fpc/rtl/units/x86_64-linux/system.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fpintres.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/uuchar.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unixtype.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/ctypes.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/baseunix.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/strings.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/objpas.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/macpas.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/iso7185.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/syscall.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unixutil.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/heaptrc.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/lineinfo.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/lnfodwrf.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/termio.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unix.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/linux.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/initc.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cmem.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/x86.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/ports.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cpu.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/crt.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/printer.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/linuxvcs.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/sysutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/typinfo.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/math.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/matrix.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/varutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/charset.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cpall.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/buildcollations.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/character.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unixcp.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/ucomplex.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/getopts.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/errors.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/sockets.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/gpm.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/ipc.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/serial.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/terminfo.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/dl.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/dynlibs.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/video.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/mouse.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/keyboard.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/variants.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/types.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/dateutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/sysconst.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fmtbcd.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fpwidestring.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cthreads.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/classes.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fgl.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/convutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/stdconvs.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/strutils.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/rtlconsts.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/dos.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/objects.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cwstring.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/fpcylix.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/clocale.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/exeinfo.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1250.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1251.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1252.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1253.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1254.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1255.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1256.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1257.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp1258.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp437.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp646.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp850.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp866.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp874.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp932.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp936.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp949.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp950.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp8859_1.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/cp8859_5.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unicodedata.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unicodeducet.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/unicodenumtable.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_de.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_es.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_fr_ca.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_ja.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_ko.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_ru.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_sv.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/collation_zh.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/syslinux.ppu /home/anton/development/fpc/rtl/units/x86_64-linux/linux.ppu
+/bin/rm -f /home/anton/development/fpc/rtl/units/x86_64-linux/system.o /home/anton/development/fpc/rtl/units/x86_64-linux/fpintres.o /home/anton/development/fpc/rtl/units/x86_64-linux/uuchar.o /home/anton/development/fpc/rtl/units/x86_64-linux/unixtype.o /home/anton/development/fpc/rtl/units/x86_64-linux/ctypes.o /home/anton/development/fpc/rtl/units/x86_64-linux/baseunix.o /home/anton/development/fpc/rtl/units/x86_64-linux/strings.o /home/anton/development/fpc/rtl/units/x86_64-linux/objpas.o /home/anton/development/fpc/rtl/units/x86_64-linux/macpas.o /home/anton/development/fpc/rtl/units/x86_64-linux/iso7185.o /home/anton/development/fpc/rtl/units/x86_64-linux/syscall.o /home/anton/development/fpc/rtl/units/x86_64-linux/unixutil.o /home/anton/development/fpc/rtl/units/x86_64-linux/heaptrc.o /home/anton/development/fpc/rtl/units/x86_64-linux/lineinfo.o /home/anton/development/fpc/rtl/units/x86_64-linux/lnfodwrf.o /home/anton/development/fpc/rtl/units/x86_64-linux/termio.o /home/anton/development/fpc/rtl/units/x86_64-linux/unix.o /home/anton/development/fpc/rtl/units/x86_64-linux/linux.o /home/anton/development/fpc/rtl/units/x86_64-linux/initc.o /home/anton/development/fpc/rtl/units/x86_64-linux/cmem.o /home/anton/development/fpc/rtl/units/x86_64-linux/x86.o /home/anton/development/fpc/rtl/units/x86_64-linux/ports.o /home/anton/development/fpc/rtl/units/x86_64-linux/cpu.o /home/anton/development/fpc/rtl/units/x86_64-linux/crt.o /home/anton/development/fpc/rtl/units/x86_64-linux/printer.o /home/anton/development/fpc/rtl/units/x86_64-linux/linuxvcs.o /home/anton/development/fpc/rtl/units/x86_64-linux/sysutils.o /home/anton/development/fpc/rtl/units/x86_64-linux/typinfo.o /home/anton/development/fpc/rtl/units/x86_64-linux/math.o /home/anton/development/fpc/rtl/units/x86_64-linux/matrix.o /home/anton/development/fpc/rtl/units/x86_64-linux/varutils.o /home/anton/development/fpc/rtl/units/x86_64-linux/charset.o /home/anton/development/fpc/rtl/units/x86_64-linux/cpall.o /home/anton/development/fpc/rtl/units/x86_64-linux/buildcollations.o /home/anton/development/fpc/rtl/units/x86_64-linux/character.o /home/anton/development/fpc/rtl/units/x86_64-linux/unixcp.o /home/anton/development/fpc/rtl/units/x86_64-linux/ucomplex.o /home/anton/development/fpc/rtl/units/x86_64-linux/getopts.o /home/anton/development/fpc/rtl/units/x86_64-linux/errors.o /home/anton/development/fpc/rtl/units/x86_64-linux/sockets.o /home/anton/development/fpc/rtl/units/x86_64-linux/gpm.o /home/anton/development/fpc/rtl/units/x86_64-linux/ipc.o /home/anton/development/fpc/rtl/units/x86_64-linux/serial.o /home/anton/development/fpc/rtl/units/x86_64-linux/terminfo.o /home/anton/development/fpc/rtl/units/x86_64-linux/dl.o /home/anton/development/fpc/rtl/units/x86_64-linux/dynlibs.o /home/anton/development/fpc/rtl/units/x86_64-linux/video.o /home/anton/development/fpc/rtl/units/x86_64-linux/mouse.o /home/anton/development/fpc/rtl/units/x86_64-linux/keyboard.o /home/anton/development/fpc/rtl/units/x86_64-linux/variants.o /home/anton/development/fpc/rtl/units/x86_64-linux/types.o /home/anton/development/fpc/rtl/units/x86_64-linux/dateutils.o /home/anton/development/fpc/rtl/units/x86_64-linux/sysconst.o /home/anton/development/fpc/rtl/units/x86_64-linux/fmtbcd.o /home/anton/development/fpc/rtl/units/x86_64-linux/fpwidestring.o /home/anton/development/fpc/rtl/units/x86_64-linux/cthreads.o /home/anton/development/fpc/rtl/units/x86_64-linux/classes.o /home/anton/development/fpc/rtl/units/x86_64-linux/fgl.o /home/anton/development/fpc/rtl/units/x86_64-linux/convutils.o /home/anton/development/fpc/rtl/units/x86_64-linux/stdconvs.o /home/anton/development/fpc/rtl/units/x86_64-linux/strutils.o /home/anton/development/fpc/rtl/units/x86_64-linux/rtlconsts.o /home/anton/development/fpc/rtl/units/x86_64-linux/dos.o /home/anton/development/fpc/rtl/units/x86_64-linux/objects.o /home/anton/development/fpc/rtl/units/x86_64-linux/cwstring.o /home/anton/development/fpc/rtl/units/x86_64-linux/fpcylix.o /home/anton/development/fpc/rtl/units/x86_64-linux/clocale.o /home/anton/development/fpc/rtl/units/x86_64-linux/exeinfo.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp1250.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp1251.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp1252.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp1253.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp1254.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp1255.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp1256.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp1257.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp1258.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp437.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp646.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp850.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp866.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp874.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp932.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp936.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp949.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp950.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp8859_1.o /home/anton/development/fpc/rtl/units/x86_64-linux/cp8859_5.o /home/anton/development/fpc/rtl/units/x86_64-linux/unicodedata.o /home/anton/development/fpc/rtl/units/x86_64-linux/unicodeducet.o /home/anton/development/fpc/rtl/units/x86_64-linux/unicodenumtable.o /home/anton/development/fpc/rtl/units/x86_64-linux/collation_de.o /home/anton/development/fpc/rtl/units/x86_64-linux/collation_es.o /home/anton/development/fpc/rtl/units/x86_64-linux/collation_fr_ca.o /home/anton/development/fpc/rtl/units/x86_64-linux/collation_ja.o /home/anton/development/fpc/rtl/units/x86_64-linux/collation_ko.o /home/anton/development/fpc/rtl/units/x86_64-linux/collation_ru.o /home/anton/development/fpc/rtl/units/x86_64-linux/collation_sv.o /home/anton/development/fpc/rtl/units/x86_64-linux/collation_zh.o /home/anton/development/fpc/rtl/units/x86_64-linux/linux.o
+/bin/rm -f /home/anton/development/fpc/rtl/units/x86_64-linux/math.rst /home/anton/development/fpc/rtl/units/x86_64-linux/varutils.rst /home/anton/development/fpc/rtl/units/x86_64-linux/typinfo.rst /home/anton/development/fpc/rtl/units/x86_64-linux/variants.rst /home/anton/development/fpc/rtl/units/x86_64-linux/sysconst.rst /home/anton/development/fpc/rtl/units/x86_64-linux/rtlconsts.rst /home/anton/development/fpc/rtl/units/x86_64-linux/stdconvs.rst
+/bin/rm -f fpcmade.x86_64-linux Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *.s *_ppas.sh
+make[5]: Leaving directory `/home/anton/development/fpc/rtl/linux'
+make[4]: Leaving directory `/home/anton/development/fpc/rtl'
+make -C /home/anton/development/fpc/rtl 'OPT=' all
+make[4]: Entering directory `/home/anton/development/fpc/rtl'
+make -C linux all
+make[5]: Entering directory `/home/anton/development/fpc/rtl/linux'
+as --64 -o /home/anton/development/fpc/rtl/units/x86_64-linux/prt0.o x86_64/prt0.as
+as --64  -o /home/anton/development/fpc/rtl/units/x86_64-linux/dllprt0.o x86_64/dllprt0.as
+as --64 -o /home/anton/development/fpc/rtl/units/x86_64-linux/cprt0.o x86_64/cprt0.as
+as --64 -o /home/anton/development/fpc/rtl/units/x86_64-linux/gprt0.o x86_64/gprt0.as
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Us -Sg system.pp
+text.inc(2082,14) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+text.inc(2301,53) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/fpintres.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/uuchar.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/unixtype.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/ctypes.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/baseunix.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/strings.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -I../objpas ../objpas/objpas.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/unix.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/errors.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/sysconst.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fi../objpas/sysutils ../unix/sysutils.pp
+sysformt.inc(320,17) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(323,17) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(325,25) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(331,25) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+dati.inc(483,9) Warning: Comparison might be always true due to range of constant and expression
+sysformt.inc(47,42) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(60,44) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(69,44) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(79,60) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(95,61) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(221,42) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(257,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(260,49) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(271,22) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(276,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(278,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(282,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(284,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(288,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(290,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(294,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(296,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(300,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(302,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(310,27) Warning: Implicit string type conversion from "ShortString" to "WideString"
+sysformt.inc(313,29) Warning: Implicit string type conversion from "Char" to "WideString"
+sysformt.inc(328,25) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(342,22) Warning: Implicit string type conversion from "ShortString" to "WideString"
+sysformt.inc(365,24) Warning: Implicit string type conversion from "ShortString" to "WideString"
+sysformt.inc(374,24) Warning: Implicit string type conversion from "ShortString" to "WideString"
+sysformt.inc(382,20) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(384,26) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(47,42) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(60,44) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(69,44) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(79,60) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(95,61) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(221,42) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(257,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(260,49) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(271,22) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(276,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(278,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(282,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(284,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(288,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(290,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(294,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(296,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(300,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(302,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(310,27) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(313,29) Warning: Implicit string type conversion from "Char" to "UnicodeString"
+sysformt.inc(328,25) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(342,22) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(365,24) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(374,24) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(382,20) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(384,26) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysencoding.inc(297,51) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysencoding.inc(370,13) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysencoding.inc(503,13) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysencoding.inc(581,13) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/math.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/macpas.pp 
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/iso7185.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/syscall.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/unixutil.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Sg ../inc/heaptrc.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/lineinfo.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/lnfodwrf.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE termio.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE linux.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/initc.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/cmem.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/x86.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/ports.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../x86_64/cpu.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/crt.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/printer.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE linuxvcs.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/rtlconsts.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Sg ../objpas/typinfo.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/matrix.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -I../objpas ../unix/varutils.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/charset.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fu../inc -Fi../charmaps ../charmaps/cpall.pas
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fu../objpas -Fi../objpas/collations -I../objpas/collations ../objpas/collations/buildcollations.pas
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/character.pas
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/unixcp.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/ucomplex.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/getopts.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/sockets.pp
+sockets.inc(371,14) Warning: Symbol "htonl" is deprecated
+sockets.inc(377,14) Warning: Symbol "NToHl" is deprecated
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE gpm.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/ipc.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/serial.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/terminfo.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/dl.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/dynlibs.pas
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/video.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/mouse.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/keyboard.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fi../inc ../inc/variants.pp
+variants.pp(4360,32) Warning: Comparison might be always true due to range of constant and expression
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/types.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -I../objpas ../objpas/dateutils.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/fgl.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE -Fi../objpas/classes ../unix/classes.pp
+parser.inc(296,42) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+parser.inc(479,25) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+parser.inc(493,13) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+tthread.inc(226,19) Warning: Symbol "Resume" is deprecated
+tthread.inc(243,5) Warning: Symbol "Suspend" is deprecated
+tthread.inc(244,13) Warning: Symbol "Resume" is deprecated
+classes.inc(212,9) Warning: Symbol "Resume" is deprecated
+classes.inc(229,11) Warning: Symbol "Resume" is deprecated
+classes.inc(591,13) Warning: Symbol "GetTickCount" is deprecated: "Use GetTickCount64 instead"
+classes.inc(1851,48) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+reader.inc(1495,17) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+reader.inc(1498,21) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+reader.inc(1500,21) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/fmtbcd.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/fpwidestring.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/cthreads.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/convutils.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/stdconvs.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../objpas/strutils.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/dos.pp
+dos.pp(236,9) Warning: Symbol "weekday" is not portable
+dos.pp(592,6) Warning: Symbol "UnixDateToDt" is not portable
+dos.pp(816,4) Warning: Symbol "UnixDateToDt" is not portable
+dos.pp(832,16) Warning: Symbol "DTToUnixDate" is not portable
+dos.pp(889,6) Warning: Symbol "FpGetEnv" is deprecated
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../inc/objects.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/cwstring.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE fpcylix.pp
+/home/anton/development/fpc/compiler/ppc -Ur -Ur -Xs -O2 -n -Fi../inc -Fi../x86_64 -Fi../unix -Fix86_64 -FE. -FU/home/anton/development/fpc/rtl/units/x86_64-linux -Cg -dx86_64 -dRELEASE ../unix/clocale.pp
+make[5]: Leaving directory `/home/anton/development/fpc/rtl/linux'
+make[4]: Leaving directory `/home/anton/development/fpc/rtl'
+make[3]: Leaving directory `/home/anton/development/fpc/compiler'
+make 'FPC=/home/anton/development/fpc/compiler/ppc' OS_TARGET=linux CPU_TARGET=x86_64 PPC_TARGET=arm EXENAME=ppcrossarm CROSSBINDIR= BINUTILSPREFIX= CROSSCYCLEBOOTSTRAP=1 cycleclean compiler CYCLELEVEL=2
+make[3]: Entering directory `/home/anton/development/fpc/compiler'
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.sh
+make -C utils cleanall
+make[4]: Entering directory `/home/anton/development/fpc/compiler/utils'
+/bin/rm -f units/x86_64-linux/ppu.ppu units/x86_64-linux/crc.ppu units/x86_64-linux/usubst.ppu
+/bin/rm -rf units
+/bin/rm -f *.o *.ppu *.rst *.s *.a *.so *.ppl
+/bin/rm -rf *.sl
+/bin/rm -f fpcmade.* Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *_ppas.sh
+make[4]: Leaving directory `/home/anton/development/fpc/compiler/utils'
+/bin/rm -rf arm/units
+/bin/rm -f arm/*.o arm/*.ppu arm/*.rst arm/*.s arm/*.a arm/*.so arm/*.ppl
+/bin/rm -f arm/ppc386 arm/ppc68k arm/ppcx64 arm/ppcppc arm/ppcsparc arm/ppcppc64 arm/ppcarm arm/ppcmips arm/ppcmipsel arm/ppcjvm arm/ppc8086 arm/ppcrossarm
+/bin/rm -f ppcrossarm
+/bin/mkdir -p arm/units/x86_64-linux
+/home/anton/development/fpc/compiler/ppc -Ur -Xs -O2 -n -Fuarm -Fusystems -Fu/home/anton/development/fpc/rtl/units/x86_64-linux -Fiarm -FE. -FUarm/units/x86_64-linux -Cg -dRELEASE    -darm -dGDB -dBROWSERLOG  -Sew pp.pas
+/bin/mv -f ./pp ppcrossarm
+make[3]: Leaving directory `/home/anton/development/fpc/compiler'
+make[2]: Leaving directory `/home/anton/development/fpc/compiler'
+make[1]: Leaving directory `/home/anton/development/fpc'
+make rtl_clean FPC=/home/anton/development/fpc/compiler/ppcrossarm
+make[1]: Entering directory `/home/anton/development/fpc'
+make -C rtl clean
+make[2]: Entering directory `/home/anton/development/fpc/rtl'
+/bin/rm -f fpcmade.arm-embedded Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *.s *_ppas.bat
+make -C embedded clean
+make[3]: Entering directory `/home/anton/development/fpc/rtl/embedded'
+/bin/rm -f /home/anton/development/fpc/rtl/units/arm-embedded/system.ppu /home/anton/development/fpc/rtl/units/arm-embedded/lm4f120.ppu /home/anton/development/fpc/rtl/units/arm-embedded/xmc4500.ppu /home/anton/development/fpc/rtl/units/arm-embedded/cortexm3.ppu /home/anton/development/fpc/rtl/units/arm-embedded/cortexm4.ppu /home/anton/development/fpc/rtl/units/arm-embedded/uuchar.ppu /home/anton/development/fpc/rtl/units/arm-embedded/objpas.ppu /home/anton/development/fpc/rtl/units/arm-embedded/heapmgr.ppu /home/anton/development/fpc/rtl/units/arm-embedded/consoleio.ppu /home/anton/development/fpc/rtl/units/arm-embedded/sysutils.ppu /home/anton/development/fpc/rtl/units/arm-embedded/sysconst.ppu
+/bin/rm -f fpcmade.arm-embedded Package.fpc ./ppas.sh script.res link.res  
+/bin/rm -f *.s *_ppas.bat
+make[3]: Leaving directory `/home/anton/development/fpc/rtl/embedded'
+make[2]: Leaving directory `/home/anton/development/fpc/rtl'
+make[1]: Leaving directory `/home/anton/development/fpc'
+make rtl_all FPC=/home/anton/development/fpc/compiler/ppcrossarm FPCFPMAKE=/home/anton/development/fpc/compiler/ppc RELEASE=1
+make[1]: Entering directory `/home/anton/development/fpc'
+make -C rtl all
+make[2]: Entering directory `/home/anton/development/fpc/rtl'
+make -C embedded all
+make[3]: Entering directory `/home/anton/development/fpc/rtl/embedded'
+/bin/mkdir -p /home/anton/development/fpc/rtl/units/arm-embedded
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  -Us -Sg system.pp 
+text.inc(2082,14) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+text.inc(2301,53) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  arm/lm4f120.pp
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  arm/xmc4500.pp
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  arm/cortexm3.pp
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  arm/cortexm4.pp
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  ../inc/uuchar.pp
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  -I../objpas ../objpas/objpas.pp 
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  heapmgr.pp
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  consoleio.pp
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  ../objpas/sysconst.pp
+/home/anton/development/fpc/compiler/ppcrossarm -Cparmv7em @rtl.cfg -Ur -Tembedded -Parm -XParm-none-eabi- -Xr -Ur -Xs -O2 -n -Fi../inc -Fi../arm -FE. -FU/home/anton/development/fpc/rtl/units/arm-embedded -darm -dRELEASE  -Fi../objpas/sysutils sysutils.pp
+sysformt.inc(320,17) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(323,17) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(325,25) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(331,25) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+dati.inc(483,9) Warning: Comparison might be always true due to range of constant and expression
+sysformt.inc(47,42) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(60,44) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(69,44) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(79,60) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(95,61) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(221,42) Warning: Implicit string type conversion with potential data loss from "WideString" to "AnsiString"
+sysformt.inc(257,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(260,49) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(271,22) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(276,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(278,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(282,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(284,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(288,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(290,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(294,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(296,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(300,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(302,24) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(310,27) Warning: Implicit string type conversion from "ShortString" to "WideString"
+sysformt.inc(313,29) Warning: Implicit string type conversion from "Char" to "WideString"
+sysformt.inc(328,25) Warning: Implicit string type conversion from "AnsiString" to "WideString"
+sysformt.inc(342,22) Warning: Implicit string type conversion from "ShortString" to "WideString"
+sysformt.inc(365,24) Warning: Implicit string type conversion from "ShortString" to "WideString"
+sysformt.inc(374,24) Warning: Implicit string type conversion from "ShortString" to "WideString"
+sysformt.inc(382,20) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(384,26) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(47,42) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(60,44) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(69,44) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(79,60) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(95,61) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(221,42) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysformt.inc(257,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(260,49) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(271,22) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(276,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(278,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(282,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(284,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(288,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(290,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(294,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(296,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(300,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(302,24) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(310,27) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(313,29) Warning: Implicit string type conversion from "Char" to "UnicodeString"
+sysformt.inc(328,25) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysformt.inc(342,22) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(365,24) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(374,24) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(382,20) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysformt.inc(384,26) Warning: Implicit string type conversion from "ShortString" to "UnicodeString"
+sysencoding.inc(297,51) Warning: Implicit string type conversion with potential data loss from "UnicodeString" to "AnsiString"
+sysencoding.inc(370,13) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysencoding.inc(503,13) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysencoding.inc(581,13) Warning: Implicit string type conversion from "AnsiString" to "UnicodeString"
+sysstr.inc(232,3) Warning: Variable "UpperCaseTable" read but nowhere assigned
+make[3]: Leaving directory `/home/anton/development/fpc/rtl/embedded'
+make[2]: Leaving directory `/home/anton/development/fpc/rtl'
+make[1]: Leaving directory `/home/anton/development/fpc'
+/bin/echo Build > base.build-stamp.arm-embedded

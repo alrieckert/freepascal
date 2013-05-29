@@ -240,14 +240,14 @@ type
  end;
 
  TBKPRegisters = record
-  DR: array[1..10] of longword;
+  DR: array[1..10] of record data, res: word; end;
 
   RTCCR,
   CR,
   CSR,
   res1,res2: longword;
 
-  DR2: array[11..42] of longword;
+  DR2: array[11..42] of record data, res: word; end;
  end;
 
  TPwrRegisters = record
