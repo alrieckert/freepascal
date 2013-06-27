@@ -42,7 +42,6 @@ interface
 //======================================================================
 const
   PeripheralBase      = $40000000;
-  FSMCBase            = $60000000;
 
   APB1Base            = PeripheralBase;
   APB2Base            = PeripheralBase + $00010000;
@@ -50,14 +49,19 @@ const
   AHB2Base            = PeripheralBase + $10000000;
   AHB3Base            = PeripheralBase + $20000000;
 
-  FSMCBank1Base       = FSMCBase;
+  FSMCBase            = AHB3Base;
+
+  FSMCBank1Base1      = FSMCBase + $00000000;
+  FSMCBank1Base2      = FSMCBase + $04000000;
+  FSMCBank1Base3      = FSMCBase + $08000000;
+  FSMCBank1Base4      = FSMCBase + $0C000000;
+
   FSMCBank2Base       = FSMCBase + $10000000;
   FSMCBank3Base       = FSMCBase + $20000000;
   FSMCBank4Base       = FSMCBase + $30000000;
-  FSMCBankControlBase = FSMCBase + $40000000;
 
 //======================================================================
-// Register type definitions
+// RCC register type definitions
 //======================================================================
 type
   TRCCRegisters = record
@@ -97,43 +101,55 @@ type
     PLLI2SCFGR : longword;    // 0x84
   end;
 
+//======================================================================
+// PORT register type definitions
+//======================================================================
 type
   TPortRegisters = record
-    MODER    : longword;    // 0x00
-    OTYPER   : longword;    // 0x04
-    OSPEEDR  : longword;    // 0x08
-    PUPDR    : longword;    // 0x0C
-    IDR      : longword;    // 0x10
-    ODR      : longword;    // 0x14
-    BSRR     : longword;    // 0x18
-    LCKR     : longword;    // 0x1C
+    MODER    : longword;      // 0x00
+    OTYPER   : longword;      // 0x04
+    OSPEEDR  : longword;      // 0x08
+    PUPDR    : longword;      // 0x0C
+    IDR      : longword;      // 0x10
+    ODR      : longword;      // 0x14
+    BSRR     : longword;      // 0x18
+    LCKR     : longword;      // 0x1C
     AFR      : array[0..1] of longword;    // 0x20, 0x24
   end;
 
+//======================================================================
+// USRAT register type definitions
+//======================================================================
 type
   TUSARTRegisters = record
-    SR, res1   : word;    // 0x00
-    DR, res2   : word;    // 0x04
-    BRR, res3  : word;    // 0x08
-    CR1, res4  : word;    // 0x0C
-    CR2, res5  : word;    // 0x10
-    CR3, res6  : word;    // 0x14
-    GTPR, res7 : word;    // 0x18
+    SR, res1   : word;        // 0x00
+    DR, res2   : word;        // 0x04
+    BRR, res3  : word;        // 0x08
+    CR1, res4  : word;        // 0x0C
+    CR2, res5  : word;        // 0x10
+    CR3, res6  : word;        // 0x14
+    GTPR, res7 : word;        // 0x18
   end;
 
+//======================================================================
+// SPI register type definitions
+//======================================================================
 type
   TSPIRegisters = record
-    CR1, res1     : word;    //0x00
-    CR2, res2     : word;    //0x04
-    SR, res3      : word;    //0x08
-    DR, res4      : word;    //0x0C
-    CRCPR, res5   : word;    //0x10
-    RXCRCR, res6  : word;    //0x14
-    TXCRCR, res7  : word;    //0x18
-    I2SCFGR, res8 : word;    //0x1C
-    I2SPR, res9   : word;    //0x20
+    CR1, res1     : word;     //0x00
+    CR2, res2     : word;     //0x04
+    SR, res3      : word;     //0x08
+    DR, res4      : word;     //0x0C
+    CRCPR, res5   : word;     //0x10
+    RXCRCR, res6  : word;     //0x14
+    TXCRCR, res7  : word;     //0x18
+    I2SCFGR, res8 : word;     //0x1C
+    I2SPR, res9   : word;     //0x20
   end;
 
+//======================================================================
+// I2C register type definitions
+//======================================================================
 type
   TI2CRegisters = record
     CR1         : longword;   //0x00
@@ -149,15 +165,73 @@ type
     TXDR, res6  : word;       //0x28
   end;
 
+//======================================================================
+// FLASH register type definitions
+//======================================================================
 type
   TFlashRegisters = record
-    ACR     : longword;    //0x00
-    KEYR    : longword;    //0x04
-    OPTKEYR : longword;    //0x08
-    SR      : longword;    //0x0C
-    CR      : longword;    //0x10
-    OPTCR   : longword;    //0x14
+    ACR     : longword;       //0x00
+    KEYR    : longword;       //0x04
+    OPTKEYR : longword;       //0x08
+    SR      : longword;       //0x0C
+    CR      : longword;       //0x10
+    OPTCR   : longword;       //0x14
   end;
+
+//======================================================================
+// FSMC control register type definitions
+//======================================================================
+type
+  TFSMC = record
+    BCR1  : longword;      // 0x0000    \
+    BTR1  : longword;      // 0x0004     |
+    BCR2  : longword;      // 0x0008     |
+    BTR2  : longword;      // 0x000C     |
+    BCR3  : longword;      // 0x0010     | Bank 1
+    BTR3  : longword;      // 0x0014     |
+    BCR4  : longword;      // 0x0018     |
+    BTR4  : longword;      // 0x001C    /
+
+    res0  : array [0..16] of longword;  // 0x0020 - 0x005C
+
+    PCR2  : longword;      // 0x0060    \
+    SR2   : longword;      // 0x0064     |
+    PMEM2 : longword;      // 0x0068     |
+    PATT2 : longword;      // 0x006C     | Bank 2
+    res1  : longword;      // 0x0070     |
+    ECCR2 : longword;      // 0x0074    /
+
+    res2  : array [0..1] of longword;   // 0x0078 - 0x007C
+
+    PCR3  : longword;      // 0x0080    \
+    SR3   : longword;      // 0x0084     |
+    PMEM3 : longword;      // 0x0088     |
+    PATT3 : longword;      // 0x008C     | Bank 3
+    res3  : longword;      // 0x0090     |
+    ECCR3 : longword;      // 0x0094    /
+
+    res4  : array [0..1] of longword;   // 0x0098 - 0x009C
+
+    PCR4  : longword;      // 0x00A0    \
+    SR4   : longword;      // 0x00A4     |
+    PMEM4 : longword;      // 0x00A8     | Bank 4
+    PATT4 : longword;      // 0x00AC     |
+    PIO4  : longword;      // 0x00B0    /
+
+    res5  : array [0..20] of longword;   // 0x00B4 - 0x0100
+
+    BWTR1 : longword;      // 0x0104   \
+    res1  : longword;      // 0x0108    |
+    BWTR2 : longword;      // 0x010C    |
+    res2  : longword;      // 0x0110    | Bank 1
+    BWTR3 : longword;      // 0x0114    |
+    res3  : longword;      // 0x0118    |
+    BWTR4 : longword;      // 0x011C   /
+  end;
+
+
+
+
 
   TTimerRegisters = record
     CR1, res1,
@@ -419,6 +493,8 @@ var
   I2C2 : TI2CRegisters      absolute (APB1Base + $5800);
   I2C3 : TI2CRegisters      absolute (APB1Base + $5C00);
 
+  { FSMC }
+  FSMC       : TFSMC        absolute (AHB3Base + $40000000);
 
 (*
 
