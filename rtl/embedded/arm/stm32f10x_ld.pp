@@ -15,29 +15,29 @@ type
 
 {$PACKRECORDS 2}
 const
- PeripheralBase 	= $40000000;
+ PeripheralBase   = $40000000;
 
- FSMCBase			= $60000000;
+ FSMCBase       = $60000000;
 
- APB1Base 			= PeripheralBase;
- APB2Base 			= PeripheralBase+$10000;
- AHBBase 			= PeripheralBase+$20000;
+ APB1Base       = PeripheralBase;
+ APB2Base       = PeripheralBase+$10000;
+ AHBBase        = PeripheralBase+$20000;
 
  { FSMC }
- FSMCBank1NOR1		= FSMCBase+$00000000;
- FSMCBank1NOR2		= FSMCBase+$04000000;
- FSMCBank1NOR3		= FSMCBase+$08000000;
- FSMCBank1NOR4		= FSMCBase+$0C000000;
+ FSMCBank1NOR1    = FSMCBase+$00000000;
+ FSMCBank1NOR2    = FSMCBase+$04000000;
+ FSMCBank1NOR3    = FSMCBase+$08000000;
+ FSMCBank1NOR4    = FSMCBase+$0C000000;
 
- FSMCBank1PSRAM1	= FSMCBase+$00000000;
- FSMCBank1PSRAM2	= FSMCBase+$04000000;
- FSMCBank1PSRAM3	= FSMCBase+$08000000;
- FSMCBank1PSRAM4	= FSMCBase+$0C000000;
+ FSMCBank1PSRAM1  = FSMCBase+$00000000;
+ FSMCBank1PSRAM2  = FSMCBase+$04000000;
+ FSMCBank1PSRAM3  = FSMCBase+$08000000;
+ FSMCBank1PSRAM4  = FSMCBase+$0C000000;
 
- FSMCBank2NAND1	= FSMCBase+$10000000;
- FSMCBank3NAND2	= FSMCBase+$20000000;
+ FSMCBank2NAND1 = FSMCBase+$10000000;
+ FSMCBank3NAND2 = FSMCBase+$20000000;
 
- FSMCBank4PCCARD	= FSMCBase+$30000000;
+ FSMCBank4PCCARD  = FSMCBase+$30000000;
 
 type
  TTimerRegisters = record
@@ -330,86 +330,86 @@ type
 {$ALIGN 2}
 var
  { Timers }
- Timer1: TTimerRegisters 	absolute (APB2Base+$2C00);
- Timer2: TTimerRegisters 	absolute (APB1Base+$0000);
- Timer3: TTimerRegisters 	absolute (APB1Base+$0400);
- Timer4: TTimerRegisters 	absolute (APB1Base+$0800);
- Timer5: TTimerRegisters 	absolute (APB1Base+$0C00);
- Timer6: TTimerRegisters 	absolute (APB1Base+$1000);
- Timer7: TTimerRegisters 	absolute (APB1Base+$1400);
- Timer8: TTimerRegisters 	absolute (APB2Base+$3400);
+ Timer1: TTimerRegisters  absolute (APB2Base+$2C00);
+ Timer2: TTimerRegisters  absolute (APB1Base+$0000);
+ Timer3: TTimerRegisters  absolute (APB1Base+$0400);
+ Timer4: TTimerRegisters  absolute (APB1Base+$0800);
+ Timer5: TTimerRegisters  absolute (APB1Base+$0C00);
+ Timer6: TTimerRegisters  absolute (APB1Base+$1000);
+ Timer7: TTimerRegisters  absolute (APB1Base+$1400);
+ Timer8: TTimerRegisters  absolute (APB2Base+$3400);
 
  { RTC }
- RTC: TRTCRegisters 			absolute (APB1Base+$2800);
+ RTC: TRTCRegisters       absolute (APB1Base+$2800);
 
  { WDG }
- WWDG: TWWDGRegisters 		absolute (APB1Base+$2C00);
- IWDG: TIWDGRegisters 		absolute (APB1Base+$3000);
+ WWDG: TWWDGRegisters     absolute (APB1Base+$2C00);
+ IWDG: TIWDGRegisters     absolute (APB1Base+$3000);
 
  { SPI }
- SPI1: TSPIRegisters			absolute (APB2Base+$3000);
- SPI2: TSPIRegisters			absolute (APB1Base+$3800);
- SPI3: TSPIRegisters			absolute (APB1Base+$3C00);
+ SPI1: TSPIRegisters      absolute (APB2Base+$3000);
+ SPI2: TSPIRegisters      absolute (APB1Base+$3800);
+ SPI3: TSPIRegisters      absolute (APB1Base+$3C00);
 
  { USART/UART }
- USART1: TUSARTRegisters	absolute (APB2Base+$3800);
- USART2: TUSARTRegisters	absolute (APB1Base+$4400);
- USART3: TUSARTRegisters	absolute (APB1Base+$4800);
- UART4: TUSARTRegisters		absolute (APB1Base+$4C00);
- UART5: TUSARTRegisters		absolute (APB1Base+$5000);
+ USART1: TUSARTRegisters  absolute (APB2Base+$3800);
+ USART2: TUSARTRegisters  absolute (APB1Base+$4400);
+ USART3: TUSARTRegisters  absolute (APB1Base+$4800);
+ UART4: TUSARTRegisters   absolute (APB1Base+$4C00);
+ UART5: TUSARTRegisters   absolute (APB1Base+$5000);
 
  { I2C }
- I2C1: TI2CRegisters			absolute (APB1Base+$5400);
- I2C2: TI2CRegisters			absolute (APB1Base+$5800);
+ I2C1: TI2CRegisters      absolute (APB1Base+$5400);
+ I2C2: TI2CRegisters      absolute (APB1Base+$5800);
 
  { USB }
- USB: TUSBRegisters			absolute (APB1Base+$5C00);
+ USB: TUSBRegisters     absolute (APB1Base+$5C00);
  USBMem: TUSBMem                        absolute (APB1Base+$6000);
 
  { CAN }
- CAN: TCANRegisters			absolute (APB1Base+$6800);
+ CAN: TCANRegisters     absolute (APB1Base+$6800);
 
  { BKP }
- BKP: TBKPRegisters			absolute (APB1Base+$6C00);
+ BKP: TBKPRegisters     absolute (APB1Base+$6C00);
 
  { PWR }
- PWR: TPwrRegisters			absolute (APB1Base+$7000);
+ PWR: TPwrRegisters     absolute (APB1Base+$7000);
 
  { DAC }
- DAC: TDACRegisters			absolute (APB1Base+$7400);
+ DAC: TDACRegisters     absolute (APB1Base+$7400);
 
  { GPIO }
- AFIO: TAFIORegisters		absolute (APB2Base+$0);
- EXTI: TEXTIRegisters		absolute (APB2Base+$0400);
+ AFIO: TAFIORegisters   absolute (APB2Base+$0);
+ EXTI: TEXTIRegisters   absolute (APB2Base+$0400);
 
- PortA: TPortRegisters		absolute (APB2Base+$0800);
- PortB: TPortRegisters		absolute (APB2Base+$0C00);
- PortC: TPortRegisters		absolute (APB2Base+$1000);
- PortD: TPortRegisters		absolute (APB2Base+$1400);
- PortE: TPortRegisters		absolute (APB2Base+$1800);
- PortF: TPortRegisters		absolute (APB2Base+$1C00);
- PortG: TPortRegisters		absolute (APB2Base+$2000);
+ PortA: TPortRegisters    absolute (APB2Base+$0800);
+ PortB: TPortRegisters    absolute (APB2Base+$0C00);
+ PortC: TPortRegisters    absolute (APB2Base+$1000);
+ PortD: TPortRegisters    absolute (APB2Base+$1400);
+ PortE: TPortRegisters    absolute (APB2Base+$1800);
+ PortF: TPortRegisters    absolute (APB2Base+$1C00);
+ PortG: TPortRegisters    absolute (APB2Base+$2000);
 
  { ADC }
- ADC1: TADCRegisters			absolute (APB2Base+$2400);
- ADC2: TADCRegisters			absolute (APB2Base+$2800);
- ADC3: TADCRegisters			absolute (APB2Base+$3C00);
+ ADC1: TADCRegisters      absolute (APB2Base+$2400);
+ ADC2: TADCRegisters      absolute (APB2Base+$2800);
+ ADC3: TADCRegisters      absolute (APB2Base+$3C00);
 
  { SDIO }
- SDIO: TSDIORegisters		absolute (APB2Base+$8000);
+ SDIO: TSDIORegisters   absolute (APB2Base+$8000);
 
  { DMA }
- DMA1: TDMARegisters			absolute (AHBBase+$0000);
- DMA2: TDMARegisters			absolute (AHBBase+$0400);
+ DMA1: TDMARegisters      absolute (AHBBase+$0000);
+ DMA2: TDMARegisters      absolute (AHBBase+$0400);
 
  { RCC }
- RCC: TRCCRegisters			absolute (AHBBase+$1000);
+ RCC: TRCCRegisters     absolute (AHBBase+$1000);
 
  { Flash }
- Flash: TFlashRegisters		absolute (AHBBase+$2000);
+ Flash: TFlashRegisters   absolute (AHBBase+$2000);
 
  { CRC }
- CRC: TCRCRegisters			absolute (AHBBase+$3000);
+ CRC: TCRCRegisters     absolute (AHBBase+$3000);
 
 implementation
 
@@ -506,7 +506,7 @@ interrupt_vectors:
    .long 0
    .long PendingSV_interrupt
    .long SysTick_interrupt
-   
+
    .long Window_watchdog_interrupt
    .long PVD_through_EXTI_Line_detection_interrupt
    .long Tamper_interrupt
@@ -567,7 +567,7 @@ interrupt_vectors:
    .long DMA2_Channel2_global_interrupt
    .long DMA2_Channel3_global_interrupt
    .long DMA2_Channel4_and_DMA2_Channel5_global_interrupts
-   
+
    .weak NMI_interrupt
    .weak Hardfault_interrupt
    .weak MemManage_interrupt
@@ -577,7 +577,7 @@ interrupt_vectors:
    .weak DebugMonitor_interrupt
    .weak PendingSV_interrupt
    .weak SysTick_interrupt
-   
+
    .weak Window_watchdog_interrupt
    .weak PVD_through_EXTI_Line_detection_interrupt
    .weak Tamper_interrupt
@@ -639,7 +639,7 @@ interrupt_vectors:
    .weak DMA2_Channel3_global_interrupt
    .weak DMA2_Channel4_and_DMA2_Channel5_global_interrupts
 
-   
+
    .set NMI_interrupt, HaltProc
    .set Hardfault_interrupt, HaltProc
    .set MemManage_interrupt, HaltProc
@@ -710,7 +710,7 @@ interrupt_vectors:
    .set DMA2_Channel2_global_interrupt, HaltProc
    .set DMA2_Channel3_global_interrupt, HaltProc
    .set DMA2_Channel4_and_DMA2_Channel5_global_interrupts, HaltProc
-   
+
    .text
 end;
 
