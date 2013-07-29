@@ -97,7 +97,7 @@ unit i_embed;
             name         : 'Embedded';
             shortname    : 'embedded';
             flags        : [tf_needs_symbol_size,tf_files_case_sensitive
-	                          ,tf_smartlink_sections];
+                            ,tf_smartlink_sections];
             cpu          : cpu_avr;
             unit_env     : '';
             extradefines : '';
@@ -223,7 +223,7 @@ unit i_embed;
             name         : 'Embedded';
             shortname    : 'embedded';
             flags        : [tf_needs_symbol_size,tf_files_case_sensitive
-	                          ,tf_smartlink_sections];
+                            ,tf_smartlink_sections];
             cpu          : cpu_i386;
             unit_env     : '';
             extradefines : '';
