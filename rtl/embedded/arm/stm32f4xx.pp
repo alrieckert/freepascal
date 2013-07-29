@@ -183,69 +183,120 @@ type
 //======================================================================
 type
   TFSMC = record
-    BCR1  : longword;      // 0x0000    \
-    BTR1  : longword;      // 0x0004     |
-    BCR2  : longword;      // 0x0008     |
-    BTR2  : longword;      // 0x000C     |
-    BCR3  : longword;      // 0x0010     | Bank 1
-    BTR3  : longword;      // 0x0014     |
-    BCR4  : longword;      // 0x0018     |
-    BTR4  : longword;      // 0x001C    /
+    BCR1  : longword;         // 0x0000    \
+    BTR1  : longword;         // 0x0004     |
+    BCR2  : longword;         // 0x0008     |
+    BTR2  : longword;         // 0x000C     |
+    BCR3  : longword;         // 0x0010     | Bank 1
+    BTR3  : longword;         // 0x0014     |
+    BCR4  : longword;         // 0x0018     |
+    BTR4  : longword;         // 0x001C    /
 
     res0  : array [0..16] of longword;  // 0x0020 - 0x005C
 
-    PCR2  : longword;      // 0x0060    \
-    SR2   : longword;      // 0x0064     |
-    PMEM2 : longword;      // 0x0068     |
-    PATT2 : longword;      // 0x006C     | Bank 2
-    res1  : longword;      // 0x0070     |
-    ECCR2 : longword;      // 0x0074    /
+    PCR2  : longword;         // 0x0060    \
+    SR2   : longword;         // 0x0064     |
+    PMEM2 : longword;         // 0x0068     |
+    PATT2 : longword;         // 0x006C     | Bank 2
+    res1  : longword;         // 0x0070     |
+    ECCR2 : longword;         // 0x0074    /
 
     res2  : array [0..1] of longword;   // 0x0078 - 0x007C
 
-    PCR3  : longword;      // 0x0080    \
-    SR3   : longword;      // 0x0084     |
-    PMEM3 : longword;      // 0x0088     |
-    PATT3 : longword;      // 0x008C     | Bank 3
-    res3  : longword;      // 0x0090     |
-    ECCR3 : longword;      // 0x0094    /
+    PCR3  : longword;         // 0x0080    \
+    SR3   : longword;         // 0x0084     |
+    PMEM3 : longword;         // 0x0088     |
+    PATT3 : longword;         // 0x008C     | Bank 3
+    res3  : longword;         // 0x0090     |
+    ECCR3 : longword;         // 0x0094    /
 
     res4  : array [0..1] of longword;   // 0x0098 - 0x009C
 
-    PCR4  : longword;      // 0x00A0    \
-    SR4   : longword;      // 0x00A4     |
-    PMEM4 : longword;      // 0x00A8     | Bank 4
-    PATT4 : longword;      // 0x00AC     |
-    PIO4  : longword;      // 0x00B0    /
+    PCR4  : longword;         // 0x00A0    \
+    SR4   : longword;         // 0x00A4     |
+    PMEM4 : longword;         // 0x00A8     | Bank 4
+    PATT4 : longword;         // 0x00AC     |
+    PIO4  : longword;         // 0x00B0    /
 
     res5  : array [0..20] of longword;   // 0x00B4 - 0x0100
 
-    BWTR1 : longword;      // 0x0104   \
-    res6  : longword;      // 0x0108    |
-    BWTR2 : longword;      // 0x010C    |
-    res7  : longword;      // 0x0110    | Bank 1E
-    BWTR3 : longword;      // 0x0114    |
-    res8  : longword;      // 0x0118    |
-    BWTR4 : longword;      // 0x011C   /
+    BWTR1 : longword;         // 0x0104   \
+    res6  : longword;         // 0x0108    |
+    BWTR2 : longword;         // 0x010C    |
+    res7  : longword;         // 0x0110    | Bank 1E
+    BWTR3 : longword;         // 0x0114    |
+    res8  : longword;         // 0x0118    |
+    BWTR4 : longword;         // 0x011C   /
   end;
 
 //======================================================================
 // DMA register type definitions
 //======================================================================
 type
-  TDMAChannel = record                    // Channel 0        // Channel 1        // Channel 2         // Channel 3        // Channel 4        // Channel 5        // Channel 6         // Channel 7
-    CR         : longword;                // 0x0010           // 0x0028           // 0x0040            // 0x0058           // 0x0070           // 0x0088           // 0x00A0            // 0x00B8
-    NDTR       : longword;                // 0x0014           // 0x002C           // 0x0044            // 0x005C           // 0x0074           // 0x008C           // 0x00A4            // 0x00BC
-    PAR        : longword;                // 0x0018           // 0x0030           // 0x0048            // 0x0060           // 0x0078           // 0x0090           // 0x00A8            // 0x00C0
-    M0AR       : longword;                // 0x001C           // 0x0034           // 0x004C            // 0x0064           // 0x007C           // 0x0094           // 0x00AC            // 0x00C4
-    M1AR       : longword;                // 0x0020           // 0x0038           // 0x0050            // 0x0068           // 0x0080           // 0x0098           // 0x00B0            // 0x00C8
-    FCR        : longword;                // 0x0024           // 0x003C           // 0x0054            // 0x006C           // 0x0084           // 0x009C           // 0x00B4            // 0x00CC
+  TDMAChannel = record        // Channel 0        // Channel 1        // Channel 2         // Channel 3        // Channel 4        // Channel 5        // Channel 6         // Channel 7
+    CR   : longword;          // 0x0010           // 0x0028           // 0x0040            // 0x0058           // 0x0070           // 0x0088           // 0x00A0            // 0x00B8
+    NDTR : longword;          // 0x0014           // 0x002C           // 0x0044            // 0x005C           // 0x0074           // 0x008C           // 0x00A4            // 0x00BC
+    PAR  : longword;          // 0x0018           // 0x0030           // 0x0048            // 0x0060           // 0x0078           // 0x0090           // 0x00A8            // 0x00C0
+    M0AR : longword;          // 0x001C           // 0x0034           // 0x004C            // 0x0064           // 0x007C           // 0x0094           // 0x00AC            // 0x00C4
+    M1AR : longword;          // 0x0020           // 0x0038           // 0x0050            // 0x0068           // 0x0080           // 0x0098           // 0x00B0            // 0x00C8
+    FCR  : longword;          // 0x0024           // 0x003C           // 0x0054            // 0x006C           // 0x0084           // 0x009C           // 0x00B4            // 0x00CC
   end;
 
   TDMARegisters = record
     ISR     : array[0..1] of longword;     // 0x0000 - 0x0004
     IFCR    : array[0..1] of longword;     // 0x0008 - 0x000C
     CHANNEL : array[0..7] of TDMAChannel;
+  end;
+
+//======================================================================
+// ADC register type definitions
+//======================================================================
+type
+  TADCCommonRegisters = record
+    CSR   : longword;         // 0x00
+    CCR   : longword;         // 0x04
+    CDR   : longword;         // 0x08
+  end;
+
+type
+  TADCRegisters = record
+    SR    : longword;         // 0x00
+    CR1   : longword;         // 0x04
+    CR2   : longword;         // 0x08
+    SMPR  : array[0..1] of longword;     // 0x0C - 0x10
+    JOFR  : array[0..3] of longword;     // 0x14 - 0x20
+    HTR   : longword;         // 0x24
+    LTR   : longword;         // 0x28
+    SQR   : array[0..2] of longword;     // 0x2C - 0x34
+    JSQR  : longword;         // 0x38
+    JDR   : array[0..3] of longword;     // 0x3C - 0x48
+    DR    : longword;         // 0x4C
+  end;
+
+//======================================================================
+// External interrupt register type definitions
+//======================================================================
+type
+  TEXTIRegisters = record
+    IMR   : longword;         // 0x00
+    EMR   : longword;         // 0x04
+    RTSR  : longword;         // 0x08
+    FTSR  : longword;         // 0x0C
+    SWIER : longword;         // 0x10
+    PR    : longword;         // 0x14
+  end;
+
+//======================================================================
+// System configuration register type definitions
+//======================================================================
+type
+  TSYSCFGRegisters = record
+    MEMRM  : longword;        // 0x00
+    PMC    : longword;        // 0x04
+    EXTICR : array[0..3] of longword;         // 0x08 - 0x14
+    res1   : longword;        // 0x18
+    res2   : longword;        // 0x1C
+    CMPCR  : longword;        // 0x20
   end;
 
 //======================================================================
@@ -397,38 +448,7 @@ type
     EXTICR: array[0..3] of longword;
     end;
 
-    TEXTIRegisters = record
-    IMR,
-    EMR,
-    RTSR,
-    FTSR,
-    SWIER,
-    PR: longword;
-    end;
 
-
-    TADCRegisters = record
-    SR,
-    CR1,
-    CR2,
-    SMPR1,
-    SMPR2: longword;
-    JOFR1, res2,
-    JOFR2, res3,
-    JOFR3, res4,
-    JOFR4, res5,
-    HTR, res6,
-    LTR, res7: word;
-    SQR1,
-    SQR2,
-    SQR3,
-    JSQR: longword;
-    JDR1, res8,
-    JDR2, res9,
-    JDR3, res10,
-    JDR4, res11: Word;
-    DR: longword;
-    end;
 
     TSDIORegisters = record
     POWER,
@@ -465,62 +485,74 @@ type
 //======================================================================
 var
   { RCC }
-  RCC : TRCCRegisters       absolute (AHB1Base + $3800);
+  RCC : TRCCRegisters          absolute (AHB1Base + $3800);
 
   { Flash }
-  Flash : TFlashRegisters   absolute (AHB1Base + $3C00);
+  Flash : TFlashRegisters      absolute (AHB1Base + $3C00);
 
   { GPIO }
-  PortA : TPortRegisters    absolute (AHB1Base + $0000);
-  PortB : TPortRegisters    absolute (AHB1Base + $0400);
-  PortC : TPortRegisters    absolute (AHB1Base + $0800);
-  PortD : TPortRegisters    absolute (AHB1Base + $0C00);
-  PortE : TPortRegisters    absolute (AHB1Base + $1000);
-  PortF : TPortRegisters    absolute (AHB1Base + $1400);
-  PortG : TPortRegisters    absolute (AHB1Base + $1800);
-  PortH : TPortRegisters    absolute (AHB1Base + $1C00);
-  PortI : TPortRegisters    absolute (AHB1Base + $2000);
+  PortA : TPortRegisters       absolute (AHB1Base + $0000);
+  PortB : TPortRegisters       absolute (AHB1Base + $0400);
+  PortC : TPortRegisters       absolute (AHB1Base + $0800);
+  PortD : TPortRegisters       absolute (AHB1Base + $0C00);
+  PortE : TPortRegisters       absolute (AHB1Base + $1000);
+  PortF : TPortRegisters       absolute (AHB1Base + $1400);
+  PortG : TPortRegisters       absolute (AHB1Base + $1800);
+  PortH : TPortRegisters       absolute (AHB1Base + $1C00);
+  PortI : TPortRegisters       absolute (AHB1Base + $2000);
 
   { USART/UART }
-  USART1 : TUSARTRegisters  absolute (APB2Base + $1000);
-  USART2 : TUSARTRegisters  absolute (APB1Base + $4400);
-  USART3 : TUSARTRegisters  absolute (APB1Base + $4800);
-  UART4  : TUSARTRegisters  absolute (APB1Base + $4C00);
-  UART5  : TUSARTRegisters  absolute (APB1Base + $5000);
-  USART6 : TUSARTRegisters  absolute (APB2Base + $1400);
+  USART1 : TUSARTRegisters     absolute (APB2Base + $1000);
+  USART2 : TUSARTRegisters     absolute (APB1Base + $4400);
+  USART3 : TUSARTRegisters     absolute (APB1Base + $4800);
+  UART4  : TUSARTRegisters     absolute (APB1Base + $4C00);
+  UART5  : TUSARTRegisters     absolute (APB1Base + $5000);
+  USART6 : TUSARTRegisters     absolute (APB2Base + $1400);
 
   { SPI }
-  SPI1 : TSPIRegisters      absolute (APB2Base + $3000);
-  SPI2 : TSPIRegisters      absolute (APB1Base + $3800);
-  SPI3 : TSPIRegisters      absolute (APB1Base + $3C00);
+  SPI1 : TSPIRegisters         absolute (APB2Base + $3000);
+  SPI2 : TSPIRegisters         absolute (APB1Base + $3800);
+  SPI3 : TSPIRegisters         absolute (APB1Base + $3C00);
 
   { I2C }
-  I2C1 : TI2CRegisters      absolute (APB1Base + $5400);
-  I2C2 : TI2CRegisters      absolute (APB1Base + $5800);
-  I2C3 : TI2CRegisters      absolute (APB1Base + $5C00);
+  I2C1 : TI2CRegisters         absolute (APB1Base + $5400);
+  I2C2 : TI2CRegisters         absolute (APB1Base + $5800);
+  I2C3 : TI2CRegisters         absolute (APB1Base + $5C00);
 
   { FSMC }
-  FSMC : TFSMC              absolute (AHB3Base + $40000000);
+  FSMC : TFSMC                 absolute (AHB3Base + $40000000);
 
   { DMA }
-  DMA2 : TDMARegisters      absolute (AHB1Base + $6000);
-  DMA2 : TDMARegisters      absolute (AHB1Base + $6400);
+  DMA1 : TDMARegisters         absolute (AHB1Base + $6000);
+  DMA2 : TDMARegisters         absolute (AHB1Base + $6400);
+
+  { ADC }
+  ADC1 : TADCRegisters         absolute (APB2Base + $2000);
+  ADC2 : TADCRegisters         absolute (APB2Base + $2000 + $100);
+  ADC3 : TADCRegisters         absolute (APB2Base + $2000 + $200);
+  ADCC : TADCCommonRegisters   absolute (APB2Base + $2000 + $300);
+
+  { EXTI }
+  EXTI : TEXTIRegisters        absolute (APB2Base + $3C00);
+
+  { SYSCFG }
+  SYSCFG : TSYSCFGRegisters    absolute (APB2Base + $3800);
 
   { TIMER }
-  Timer1  : TTimerRegisters absolute (APB2Base + $0000);
-  Timer2  : TTimerRegisters absolute (APB1Base + $0000);
-  Timer3  : TTimerRegisters absolute (APB1Base + $0400);
-  Timer4  : TTimerRegisters absolute (APB1Base + $0800);
-  Timer5  : TTimerRegisters absolute (APB1Base + $0C00);
-  Timer6  : TTimerRegisters absolute (APB1Base + $1000);
-  Timer7  : TTimerRegisters absolute (APB1Base + $1400);
-  Timer8  : TTimerRegisters absolute (APB2Base + $0400);
-  Timer9  : TTimerRegisters absolute (APB2Base + $4000);
-  Timer10 : TTimerRegisters absolute (APB2Base + $4400);
-  Timer11 : TTimerRegisters absolute (APB2Base + $4800);
-  Timer12 : TTimerRegisters absolute (APB1Base + $1800);
-  Timer13 : TTimerRegisters absolute (APB1Base + $1C00);
-  Timer14 : TTimerRegisters absolute (APB1Base + $2000);
+  Timer1  : TTimerRegisters    absolute (APB2Base + $0000);
+  Timer2  : TTimerRegisters    absolute (APB1Base + $0000);
+  Timer3  : TTimerRegisters    absolute (APB1Base + $0400);
+  Timer4  : TTimerRegisters    absolute (APB1Base + $0800);
+  Timer5  : TTimerRegisters    absolute (APB1Base + $0C00);
+  Timer6  : TTimerRegisters    absolute (APB1Base + $1000);
+  Timer7  : TTimerRegisters    absolute (APB1Base + $1400);
+  Timer8  : TTimerRegisters    absolute (APB2Base + $0400);
+  Timer9  : TTimerRegisters    absolute (APB2Base + $4000);
+  Timer10 : TTimerRegisters    absolute (APB2Base + $4400);
+  Timer11 : TTimerRegisters    absolute (APB2Base + $4800);
+  Timer12 : TTimerRegisters    absolute (APB1Base + $1800);
+  Timer13 : TTimerRegisters    absolute (APB1Base + $1C00);
+  Timer14 : TTimerRegisters    absolute (APB1Base + $2000);
 
 (*
 
@@ -566,10 +598,6 @@ var
   { DAC }
   DAC: TDACRegisters     absolute (APB1Base+$7400);
 
-  { ADC }
-  ADC1: TADCRegisters      absolute (APB2Base+$2400);
-  ADC2: TADCRegisters      absolute (APB2Base+$2800);
-  ADC3: TADCRegisters      absolute (APB2Base+$3C00);
 
   { SDIO }
   SDIO: TSDIORegisters   absolute (APB2Base+$8000);
@@ -607,13 +635,13 @@ procedure EXTI1_IRQHandler; external name 'EXTI1_IRQHandler';
 procedure EXTI2_IRQHandler; external name 'EXTI2_IRQHandler';
 procedure EXTI3_IRQHandler; external name 'EXTI3_IRQHandler';
 procedure EXTI4_IRQHandler; external name 'EXTI4_IRQHandler';
-procedure DMA2_Stream0_IRQHandler; external name 'DMA2_Stream0_IRQHandler';
-procedure DMA2_Stream1_IRQHandler; external name 'DMA2_Stream1_IRQHandler';
-procedure DMA2_Stream2_IRQHandler; external name 'DMA2_Stream2_IRQHandler';
-procedure DMA2_Stream3_IRQHandler; external name 'DMA2_Stream3_IRQHandler';
-procedure DMA2_Stream4_IRQHandler; external name 'DMA2_Stream4_IRQHandler';
-procedure DMA2_Stream5_IRQHandler; external name 'DMA2_Stream5_IRQHandler';
-procedure DMA2_Stream6_IRQHandler; external name 'DMA2_Stream6_IRQHandler';
+procedure DMA1_Stream0_IRQHandler; external name 'DMA1_Stream0_IRQHandler';
+procedure DMA1_Stream1_IRQHandler; external name 'DMA1_Stream1_IRQHandler';
+procedure DMA1_Stream2_IRQHandler; external name 'DMA1_Stream2_IRQHandler';
+procedure DMA1_Stream3_IRQHandler; external name 'DMA1_Stream3_IRQHandler';
+procedure DMA1_Stream4_IRQHandler; external name 'DMA1_Stream4_IRQHandler';
+procedure DMA1_Stream5_IRQHandler; external name 'DMA1_Stream5_IRQHandler';
+procedure DMA1_Stream6_IRQHandler; external name 'DMA1_Stream6_IRQHandler';
 procedure ADC_IRQHandler; external name 'ADC_IRQHandler';
 procedure CAN1_TX_IRQHandler; external name 'CAN1_TX_IRQHandler';
 procedure CAN1_RX0_IRQHandler; external name 'CAN1_RX0_IRQHandler';
@@ -643,7 +671,7 @@ procedure TIM8_BRK_TIM12_IRQHandler; external name 'TIM8_BRK_TIM12_IRQHandler';
 procedure TIM8_UP_TIM13_IRQHandler; external name 'TIM8_UP_TIM13_IRQHandler';
 procedure TIM8_TRG_COM_TIM14_IRQHandler; external name 'TIM8_TRG_COM_TIM14_IRQHandler';
 procedure TIM8_CC_IRQHandler; external name 'TIM8_CC_IRQHandler';
-procedure DMA2_Stream7_IRQHandler; external name 'DMA2_Stream7_IRQHandler';
+procedure DMA1_Stream7_IRQHandler; external name 'DMA1_Stream7_IRQHandler';
 procedure FSMC_IRQHandler; external name 'FSMC_IRQHandler';
 procedure SDIO_IRQHandler; external name 'SDIO_IRQHandler';
 procedure TIM5_IRQHandler; external name 'TIM5_IRQHandler';
@@ -714,13 +742,13 @@ interrupt_vectors:
    .long EXTI2_IRQHandler
    .long EXTI3_IRQHandler
    .long EXTI4_IRQHandler
-   .long DMA2_Stream0_IRQHandler
-   .long DMA2_Stream1_IRQHandler
-   .long DMA2_Stream2_IRQHandler
-   .long DMA2_Stream3_IRQHandler
-   .long DMA2_Stream4_IRQHandler
-   .long DMA2_Stream5_IRQHandler
-   .long DMA2_Stream6_IRQHandler
+   .long DMA1_Stream0_IRQHandler
+   .long DMA1_Stream1_IRQHandler
+   .long DMA1_Stream2_IRQHandler
+   .long DMA1_Stream3_IRQHandler
+   .long DMA1_Stream4_IRQHandler
+   .long DMA1_Stream5_IRQHandler
+   .long DMA1_Stream6_IRQHandler
    .long ADC_IRQHandler
    .long CAN1_TX_IRQHandler
    .long CAN1_RX0_IRQHandler
@@ -750,7 +778,7 @@ interrupt_vectors:
    .long TIM8_UP_TIM13_IRQHandler
    .long TIM8_TRG_COM_TIM14_IRQHandler
    .long TIM8_CC_IRQHandler
-   .long DMA2_Stream7_IRQHandler
+   .long DMA1_Stream7_IRQHandler
    .long FSMC_IRQHandler
    .long SDIO_IRQHandler
    .long TIM5_IRQHandler
@@ -807,13 +835,13 @@ interrupt_vectors:
    .weak EXTI2_IRQHandler
    .weak EXTI3_IRQHandler
    .weak EXTI4_IRQHandler
-   .weak DMA2_Stream0_IRQHandler
-   .weak DMA2_Stream1_IRQHandler
-   .weak DMA2_Stream2_IRQHandler
-   .weak DMA2_Stream3_IRQHandler
-   .weak DMA2_Stream4_IRQHandler
-   .weak DMA2_Stream5_IRQHandler
-   .weak DMA2_Stream6_IRQHandler
+   .weak DMA1_Stream0_IRQHandler
+   .weak DMA1_Stream1_IRQHandler
+   .weak DMA1_Stream2_IRQHandler
+   .weak DMA1_Stream3_IRQHandler
+   .weak DMA1_Stream4_IRQHandler
+   .weak DMA1_Stream5_IRQHandler
+   .weak DMA1_Stream6_IRQHandler
    .weak ADC_IRQHandler
    .weak CAN1_TX_IRQHandler
    .weak CAN1_RX0_IRQHandler
@@ -843,7 +871,7 @@ interrupt_vectors:
    .weak TIM8_UP_TIM13_IRQHandler
    .weak TIM8_TRG_COM_TIM14_IRQHandler
    .weak TIM8_CC_IRQHandler
-   .weak DMA2_Stream7_IRQHandler
+   .weak DMA1_Stream7_IRQHandler
    .weak FSMC_IRQHandler
    .weak SDIO_IRQHandler
    .weak TIM5_IRQHandler
@@ -901,13 +929,13 @@ interrupt_vectors:
    .set EXTI2_IRQHandler                 , HaltProc
    .set EXTI3_IRQHandler                 , HaltProc
    .set EXTI4_IRQHandler                 , HaltProc
-   .set DMA2_Stream0_IRQHandler          , HaltProc
-   .set DMA2_Stream1_IRQHandler          , HaltProc
-   .set DMA2_Stream2_IRQHandler          , HaltProc
-   .set DMA2_Stream3_IRQHandler          , HaltProc
-   .set DMA2_Stream4_IRQHandler          , HaltProc
-   .set DMA2_Stream5_IRQHandler          , HaltProc
-   .set DMA2_Stream6_IRQHandler          , HaltProc
+   .set DMA1_Stream0_IRQHandler          , HaltProc
+   .set DMA1_Stream1_IRQHandler          , HaltProc
+   .set DMA1_Stream2_IRQHandler          , HaltProc
+   .set DMA1_Stream3_IRQHandler          , HaltProc
+   .set DMA1_Stream4_IRQHandler          , HaltProc
+   .set DMA1_Stream5_IRQHandler          , HaltProc
+   .set DMA1_Stream6_IRQHandler          , HaltProc
    .set ADC_IRQHandler                   , HaltProc
    .set CAN1_TX_IRQHandler               , HaltProc
    .set CAN1_RX0_IRQHandler              , HaltProc
@@ -937,7 +965,7 @@ interrupt_vectors:
    .set TIM8_UP_TIM13_IRQHandler         , HaltProc
    .set TIM8_TRG_COM_TIM14_IRQHandler    , HaltProc
    .set TIM8_CC_IRQHandler               , HaltProc
-   .set DMA2_Stream7_IRQHandler          , HaltProc
+   .set DMA1_Stream7_IRQHandler          , HaltProc
    .set FSMC_IRQHandler                  , HaltProc
    .set SDIO_IRQHandler                  , HaltProc
    .set TIM5_IRQHandler                  , HaltProc
