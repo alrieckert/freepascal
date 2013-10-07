@@ -2103,19 +2103,19 @@ begin
     begin
         if ( bIsSignalingNaN or not( bIsNaN) )<>0 then
           begin
-          	result := a;
-          	exit;
+            result := a;
+            exit;
           end;
  returnLargerSignificand:
         if ( lt128( a.high shl 1, a.low, b.high shl 1, b.low ) )<>0 then
           begin
-          	result := b;
-          	exit;
+            result := b;
+            exit;
           end;
         if ( lt128( b.high shl 1, b.low, a.high shl 1, a.low ) )<>0 then
           begin
-          	result := a;
-          	exit
+            result := a;
+            exit
           end;
         if ( a.high < b.high ) then
           result := a
@@ -6074,7 +6074,7 @@ begin
                     z1 := a0 shr ( count and 63 );
                 end
                 else begin
-                	  if ( count = 128 ) then
+                      if ( count = 128 ) then
                       z2 :=  a0
                     else
                       z2 := ord( a0 <> 0 );
