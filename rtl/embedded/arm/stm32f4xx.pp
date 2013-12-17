@@ -304,47 +304,83 @@ type
 //======================================================================
 type
   TTimerRegisters = record
-    CR1, res1,
-    CR2, res2,
-    SMCR, res3,
-    DIER, res4,
-    SR, res5,
-    EGR, res     : word;
-    CCMR1        : longword;
-    CCMR2        : longword;
-    CCER         : longword;
-    CNT,
-    PSC, res10,
-    ARR, res11,
-    RCR, res12,
-    CCR1, res13,
-    CCR2, res14,
-    CCR3, res15,
-    CCR4, res16,
-    BDTR, res17,
-    DCR, res18,
-    DMAR, res19 : Word;
+    CR1  , res0  : word;   // 0x00
+    CR2  , res1  : word;   // 0x04
+    SMCR , res2  : word;   // 0x08
+    DIER , res3  : word;   // 0x0C
+    SR   , res4  : word;   // 0x10
+    EGR  , res5  : word;   // 0x14
+    CCMR1, res6  : word;   // 0x18
+    CCMR2, res7  : word;   // 0x1C
+    CCER , res8  : word;   // 0x20
+    CNT          : longword;   // 0x24
+    PSC  , res10 : word;   // 0x28
+    ARR          : longword;   // 0x2C
+    RCR  , res12 : word;   // 0x30
+    CCR1         : longword;   // 0x34
+    CCR2         : longword;   // 0x38
+    CCR3         : longword;   // 0x3C
+    CCR4         : longword;   // 0x40
+    BDTR , res17 : word;   // 0x44
+    DCR  , res18 : word;   // 0x48
+    DMAR , res19 : word;   // 0x4C
   end;
 
+//======================================================================
+// Real time clock (RTC) register type definitions
+//======================================================================
+type
   TRTCRegisters = record
-    CRH, res1,
-    CRL, res2,
-    PRLH, res3,
-    PRLL, res4,
-    DIVH, res5,
-    DIVL, res6,
-    CNTH, res7,
-    CNTL, res8,
-    ALRH, res9,
-    ALRL, res10: Word;
-    end;
+    TR       : longword;   // 0x00
+    DR       : longword;   // 0x04
+    CR       : longword;   // 0x08
+    ISR      : longword;   // 0x0C
+    PRER     : longword;   // 0x10
+    WUTR     : longword;   // 0x14
+    CALIBR   : longword;   // 0x08
+    ALRMAR   : longword;   // 0x1C
+    ALRMBR   : longword;   // 0x20
+    WPR      : longword;   // 0x24
+    SSR      : longword;   // 0x28
+    SHIFTR   : longword;   // 0x2C
+    TSTR     : longword;   // 0x30
+    res0     : longword;   // 0x34
+    TSSSR    : longword;   // 0x38
+    CALR     : longword;   // 0x3C
+    TAFCR    : longword;   // 0x40
+    ALRMASSR : longword;   // 0x44
+    ALRMBSSR : longword;   // 0x48
+  end;
 
-    TIWDGRegisters = record
-    KR, res1,
-    PR, res2,
-    RLR, res3,
-    SR, res4: word;
-    end;
+//======================================================================
+// Backup register type definitions
+//======================================================================
+type
+  TBKPRegisters = array[0..19] of dword;
+
+//======================================================================
+// Power control register type definitions
+//======================================================================
+type
+  TPWRRegisters = record
+    CR, res0  : word;
+    CSR, res1 : word;
+  end;
+
+//======================================================================
+// Independent watchdog register type definitions
+//======================================================================
+type
+  TIWDGRegisters = record
+    KR, res1   : word;
+    PR, res2   : word;    
+    RLR, res3  : word;
+    SR, res4   : word;
+  end;
+
+
+
+
 
     TWWDGRegisters = record
     CR, res2,
@@ -406,21 +442,6 @@ type
     FB: array[1..13] of array[1..2] of longword;
     end;
 
-    TBKPRegisters = record
-    DR: array[1..10] of record data, res: word; end;
-
-    RTCCR,
-    CR,
-    CSR,
-    res1,res2: longword;
-
-    DR2: array[11..42] of record data, res: word; end;
-    end;
-
-    TPwrRegisters = record
-    CR, res: word;
-    CSR: Word;
-    end;
 
     TDACRegisters = record
     CR,
@@ -554,6 +575,18 @@ var
   Timer13 : TTimerRegisters    absolute (APB1Base + $1C00);
   Timer14 : TTimerRegisters    absolute (APB1Base + $2000);
 
+  { RTC }
+  RTC : TRTCRegisters          absolute (APB1Base + $2800);
+
+  { BKP }
+  BKP : TBKPRegisters          absolute (APB1Base + $2800 + $50);
+
+  { PWR }
+  PWR : TPwrRegisters          absolute (APB1Base + $7000);
+
+  { WDG }
+  IWDG : TIWDGRegisters        absolute (APB1Base + $3000);
+
 (*
 
 
@@ -574,8 +607,6 @@ var
   Timer7: TTimerRegisters  absolute (APB1Base+$1400);
   Timer8: TTimerRegisters  absolute (APB2Base+$3400);
 
-  { RTC }
-  RTC: TRTCRegisters       absolute (APB1Base+$2800);
 
   { WDG }
   WWDG: TWWDGRegisters     absolute (APB1Base+$2C00);
@@ -589,11 +620,6 @@ var
   { CAN }
   CAN: TCANRegisters     absolute (APB1Base+$6800);
 
-  { BKP }
-  BKP: TBKPRegisters     absolute (APB1Base+$6C00);
-
-  { PWR }
-  PWR: TPwrRegisters     absolute (APB1Base+$7000);
 
   { DAC }
   DAC: TDACRegisters     absolute (APB1Base+$7400);
@@ -622,7 +648,6 @@ procedure SWI_interrupt; external name 'SWI_interrupt';
 procedure DebugMonitor_interrupt; external name 'DebugMonitor_interrupt';
 procedure PendingSV_interrupt; external name 'PendingSV_interrupt';
 procedure SysTick_interrupt; external name 'SysTick_interrupt';
-
 
 procedure WWDG_IRQHandler; external name 'WWDG_IRQHandler';
 procedure PVD_IRQHandler; external name 'PVD_IRQHandler';
@@ -730,7 +755,6 @@ interrupt_vectors:
    .long 0
    .long PendingSV_interrupt
    .long SysTick_interrupt
-
    .long WWDG_IRQHandler
    .long PVD_IRQHandler
    .long TAMP_STAMP_IRQHandler

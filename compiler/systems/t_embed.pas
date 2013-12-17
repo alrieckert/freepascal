@@ -403,23 +403,25 @@ begin
       ct_stm32f107vc,
 
       { STMicroelectronics F3 }
-      ct_stm32f302xB, 
-      ct_stm32f302xC,  
-      ct_stm32f303xB, 
-      ct_stm32f303xC,  
-      ct_stm32f313xB, 
-      ct_stm32f313xC,  
-      ct_stm32f372x8, 
-      ct_stm32f372xB,  
-      ct_stm32f372xC,  
-      ct_stm32f373x8, 
-      ct_stm32f373xB,  
-      ct_stm32f373xC,  
-      ct_stm32f383x8, 
-      ct_stm32f383xB,  
-      ct_stm32f383xC,  
+      ct_stm32f302xB,
+      ct_stm32f302xC,
+      ct_stm32f303xB,
+      ct_stm32f303xC,
+      ct_stm32f313xB,
+      ct_stm32f313xC,
+      ct_stm32f372x8,
+      ct_stm32f372xB,
+      ct_stm32f372xC,
+      ct_stm32f373x8,
+      ct_stm32f373xB,
+      ct_stm32f373xC,
+      ct_stm32f383x8,
+      ct_stm32f383xB,
+      ct_stm32f383xC,
 
       { STMicroelectronics F4 }
+      ct_stm32f401xB,
+      ct_stm32f401xC,
       ct_stm32f405xE,
       ct_stm32f405xG,
       ct_stm32f407xE,
@@ -501,18 +503,18 @@ begin
       ct_lm3s9b92,
       ct_lm3s9b95,
       ct_lm3s9b96,
-      
+
       ct_lm3s5d51,
-      
+
       { TI - Stellaris something }
       ct_lm4f120h5,
-      
+
       { Infineon }
       ct_xmc4500x1024,
       ct_xmc4500x768,
       ct_xmc4502x768,
       ct_xmc4504x512,
-      
+
       ct_sc32442b,
       ct_thumb2bare:
         begin

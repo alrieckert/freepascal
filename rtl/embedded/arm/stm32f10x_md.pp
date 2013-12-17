@@ -578,7 +578,6 @@ interrupt_vectors:
    .long 0
    .long PendingSV_interrupt
    .long SysTick_interrupt
-   
    .long Window_watchdog_interrupt
    .long PVD_through_EXTI_Line_detection_interrupt
    .long Tamper_interrupt

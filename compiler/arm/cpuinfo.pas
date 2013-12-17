@@ -236,6 +236,9 @@ Type
       ct_stm32f383xC,  // 256k
 
       { STMicroelectronics F4 }
+      ct_stm32f401xB,  // 128k
+      ct_stm32f401xC,  // 256k
+
       ct_stm32f405xE,  // 512k
       ct_stm32f405xG,  // 1024k
       ct_stm32f407xE,  // 512k
@@ -594,6 +597,9 @@ Const
       (controllertypestr:'STM32F383XC';     controllerunitstr:'STM32F3XX';     flashbase:$08000000; flashsize:$00040000; srambase:$20000000; sramsize:$00008000),
 
       { STM32F4 series }
+      (controllertypestr:'STM32F401XB';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00020000; srambase:$20000000; sramsize:$00010000),
+      (controllertypestr:'STM32F401XC';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00040000; srambase:$20000000; sramsize:$00010000),
+
       (controllertypestr:'STM32F405XE';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00080000; srambase:$20000000; sramsize:$0001C000),
       (controllertypestr:'STM32F405XG';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00100000; srambase:$20000000; sramsize:$0001C000),
       (controllertypestr:'STM32F407XE';     controllerunitstr:'STM32F4XX';     flashbase:$08000000; flashsize:$00080000; srambase:$20000000; sramsize:$0001C000),
