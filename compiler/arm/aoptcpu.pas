@@ -1361,7 +1361,6 @@ Implementation
                               break;
                             end;
                       end;
-{$ifdef dummy}                    
                     {
                       Fold
                         mov r1, r1, lsl #2
@@ -1436,8 +1435,6 @@ Implementation
                          p:=hp1;
                          Result:=true;
                        end;
-{$endif}                    
-
                     {
                       Often we see shifts and then a superfluous mov to another register
                       In the future this might be handled in RedundantMovProcess when it uses RegisterTracking
