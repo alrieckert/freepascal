@@ -2068,11 +2068,11 @@ Implementation
                   begin
                     {
                       change
-	              stmfd	r13!,[r14]
-	              sub	r13,r13,#4
-	              bl	abc
-	              add	r13,r13,#4
-	              ldmfd	r13!,[r15]
+                stmfd r13!,[r14]
+                sub r13,r13,#4
+                bl  abc
+                add r13,r13,#4
+                ldmfd r13!,[r15]
                       into
                       b         abc
                     }
@@ -2941,6 +2941,7 @@ Implementation
           else if MatchInstruction(p, [A_AND,A_ORR,A_EOR], [C_None], [PF_None,PF_S]) and
             (taicpu(p).ops = 3) and
             MatchOperand(taicpu(p).oper[0]^, taicpu(p).oper[2]^) and
+            (not MatchOperand(taicpu(p).oper[1]^, NR_STACK_POINTER_REG)) and
             (not RegInUsedRegs(NR_DEFAULTFLAGS,UsedRegs)) then
             begin
               DebugMsg('Peephole opXYX2opsXY done', p);
