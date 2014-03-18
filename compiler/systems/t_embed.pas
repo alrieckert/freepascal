@@ -566,7 +566,6 @@ begin
       Add('    *(.strings)');
       Add('    *(.rodata, .rodata.*)');
       Add('    *(.comment)');
-      Add('    _etext = .;');
       if embedded_controllers[current_settings.controllertype].flashsize<>0 then
         begin
           Add('    } >flash');
@@ -576,6 +575,8 @@ begin
           Add('    } >ram');
         end;
       Add('    .note.gnu.build-id : { *(.note.gnu.build-id) } >flash ');
+
+      Add('    _etext = .;');
 
       Add('    .data :');
       Add('    {');
