@@ -2,10 +2,10 @@
 // Title        : STM32F4xx Register Definitions
 // Authors      : Anton Rieckert
 // Email        : anton@riecktron.co.za
-// Last Updated : May, 2013
+// Last Updated : March, 2014
 // Updates      : www.riecktron.co.za
 //
-// Copyright (c) 2013 Anton Rieckert (anton@riecktron.co.za)
+// Copyright (c) 2013-2014 Anton Rieckert (anton@riecktron.co.za)
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files
@@ -35,7 +35,7 @@ unit stm32f4xx;
 //======================================================================
 interface
 
-{$PACKRECORDS 2}
+{$PACKRECORDS 4}
 
 //======================================================================
 // Peripheral base offsets
@@ -356,7 +356,7 @@ type
 // Backup register type definitions
 //======================================================================
 type
-  TBKPRegisters = array[0..19] of dword;
+  TBKPRegisters = packed array[0..19] of dword;
 
 //======================================================================
 // Power control register type definitions
@@ -377,6 +377,105 @@ type
     RLR, res3  : word;
     SR, res4   : word;
   end;
+
+//======================================================================
+// USB
+//======================================================================
+type
+  TUSBOTGGlobalRegisters = record
+    GOTGCTL                   : dword;      // USB_OTG Control and Status Register       Address offset : 0x00     
+    GOTGINT                   : dword;      // USB_OTG Interrupt Register                Address offset : 0x04     
+    GAHBCFG                   : dword;      // Core AHB Configuration Register           Address offset : 0x08     
+    GUSBCFG                   : dword;      // Core USB Configuration Register           Address offset : 0x0C     
+    GRSTCTL                   : dword;      // Core Reset Register                       Address offset : 0x10     
+    GINTSTS                   : dword;      // Core Interrupt Register                   Address offset : 0x14     
+    GINTMSK                   : dword;      // Core Interrupt Mask Register              Address offset : 0x18     
+    GRXSTSR                   : dword;      // Receive Sts Q Read Register               Address offset : 0x1C     
+    GRXSTSP                   : dword;      // Receive Sts Q Read & POP Register         Address offset : 0x20     
+    GRXFSIZ                   : dword;      // Receive FIFO Size Register                Address offset : 0x24     
+    DIEPTXF0_HNPTXFSIZ        : dword;      // EP0 / Non Periodic Tx FIFO Size Register  Address offset : 0x28    
+    HNPTXSTS                  : dword;      // Non Periodic Tx FIFO/Queue Sts reg        Address offset : 0x2C     
+    Reserved30: array[0..1]   of dword;      // Reserved                                  Address offset : 0x30     
+    GCCFG                     : dword;      // General Purpose IO Register               Address offset : 0x38     
+    CID                       : dword;      // User ID Register                          Address offset : 0x3C     
+    Reserved40 : array[0..47] of dword;      // Reserved                                  Address offset : 0x40-0xFF
+    HPTXFSIZ                  : dword;      // Host Periodic Tx FIFO Size Reg            Address offset : 0x100 
+    DIEPTXF : array[0..15]    of dword;      // dev Periodic Transmit FIFO 
+  end;
+
+type
+  TUSBOTGDeviceTypeRegisters = record
+    DCFG : dword;         //!< dev Configuration Register   Address offset : 0x800 */
+    DCTL : dword;         //!< dev Control Register         Address offset : 0x804 */
+    DSTS : dword;         //!< dev Status Register (RO)     Address offset : 0x808 */
+    Reserved0C : dword;        //!< Reserved                     Address offset : 0x80C */
+    DIEPMSK : dword;      // !< dev IN Endpoint Mask        Address offset : 0x810 */
+    DOEPMSK : dword;      //!< dev OUT Endpoint Mask        Address offset : 0x814 */
+    DAINT : dword;        //!< dev All Endpoints Itr Reg    Address offset : 0x818 */
+    DAINTMSK : dword;     //!< dev All Endpoints Itr Mask   Address offset : 0x81C */
+     Reserved20 : dword;       //!< Reserved                     Address offset : 0x820 */
+    Reserved9 : dword;         //!< Reserved                     Address offset : 0x824 */
+    DVBUSDIS : dword;     //!< dev VBUS discharge Register  Address offset : 0x828 */
+    DVBUSPULSE : dword;   //!< dev VBUS Pulse Register      Address offset : 0x82C */
+    DTHRCTL : dword;      //!< dev thr                      Address offset : 0x830 */
+    DIEPEMPMSK : dword;   //!< dev empty msk                Address offset : 0x834 */
+    DEACHINT : dword;     //!< dedicated EP interrupt       Address offset : 0x838 */
+    DEACHMSK : dword;     //!< dedicated EP msk             Address offset : 0x83C */  
+    Reserved40 : dword;        //!< dedicated EP mask            Address offset : 0x840 */
+    DINEP1MSK : dword;    //!< dedicated EP mask            Address offset : 0x844 */
+     Reserved44: array[0..14] of dword;   //!< Reserved                     Address offset : 0x844-0x87C */
+    DOUTEP1MSK : dword;   //!< dedicated EP msk             Address offset : 0x884 */   
+  end;
+
+
+type
+  TUSBOTGInEndpointRegisters = record
+    DIEPCTL : dword;        // dev IN Endpoint Control Reg 900h + (ep_num * 20h) + 00h     */
+    Reserved04 : dword;          // Reserved                       900h + (ep_num * 20h) + 04h  */
+    DIEPINT : dword;        // dev IN Endpoint Itr Reg     900h + (ep_num * 20h) + 08h     */
+    Reserved0C : dword;          // Reserved                       900h + (ep_num * 20h) + 0Ch  */
+    DIEPTSIZ : dword;       // IN Endpoint Txfer Size   900h + (ep_num * 20h) + 10h        */
+    DIEPDMA : dword;        // IN Endpoint DMA Address Reg    900h + (ep_num * 20h) + 14h  */
+    DTXFSTS : dword;        //IN Endpoint Tx FIFO Status Reg 900h + (ep_num * 20h) + 18h   */
+    Reserved18 : dword;           // Reserved  900h+(ep_num*20h)+1Ch-900h+ (ep_num * 20h) + 1Ch */
+  end;
+
+type
+  TUSBOTGOutEndpointRegisters = record
+    DOEPCTL : dword;       // dev OUT Endpoint Control Reg  B00h + (ep_num * 20h) + 00h*/
+    Reserved04 : dword;         // Reserved                      B00h + (ep_num * 20h) + 04h*/
+    DOEPINT : dword;       // dev OUT Endpoint Itr Reg      B00h + (ep_num * 20h) + 08h*/
+    Reserved0C : dword;         // Reserved                      B00h + (ep_num * 20h) + 0Ch*/
+    DOEPTSIZ : dword;      // dev OUT Endpoint Txfer Size   B00h + (ep_num * 20h) + 10h*/
+    DOEPDMA : dword;       // dev OUT Endpoint DMA Address  B00h + (ep_num * 20h) + 14h*/
+    Reserved18 : array[0..1] of dword;      // Reserved B00h + (ep_num * 20h) + 18h - B00h + (ep_num * 20h) + 1Ch*/
+  end;
+
+type
+  TUSBOTGHostRegisters = record
+    HCFG : dword;             // Host Configuration Register    400h*/
+    HFIR : dword;             // Host Frame Interval Register   404h*/
+    HFNUM : dword;            // Host Frame Nbr/Frame Remaining 408h*/
+    Reserved40C : dword;           // Reserved                       40Ch*/
+    HPTXSTS : dword;          // Host Periodic Tx FIFO/ Queue Status 410h*/
+    HAINT : dword;            // Host All Channels Interrupt Register 414h*/
+    HAINTMSK : dword;         // Host All Channels Interrupt Mask 418h*/
+  end;
+
+type
+  TUSBOTGHostChannelRegisters = record
+    HCCHAR : dword;
+    HCSPLT : dword;
+    HCINT : dword;
+    HCINTMSK : dword;
+    HCTSIZ : dword;
+    HCDMA : dword;
+    Reserved : array[0..1] of dword;
+  end;
+
+
+
+
 
 
 
@@ -499,7 +598,7 @@ type
     CR: byte;
     end;
 
-{$ALIGN 2}
+{$ALIGN 1}
 
 //======================================================================
 // Register variables definitions
@@ -586,6 +685,45 @@ var
 
   { WDG }
   IWDG : TIWDGRegisters        absolute (APB1Base + $3000);
+
+  { USB FS }
+  USBFS            : TUSBOTGGlobalRegisters        absolute $50000000;
+  USBFS_PCGCCTL    : dword                         absolute ($50000000 + $E00);
+  USBFS_HPRT0      : dword                         absolute ($50000000 + $440);
+  USBFS_DEVICE     : TUSBOTGDeviceTypeRegisters    absolute ($50000000 + $800);
+  USBFS_HOST       : TUSBOTGHostRegisters          absolute ($50000000 + $400); 
+
+{
+
+
+
+
+#define USB_OTG_FS_PERIPH_BASE               ((uint32_t )0x50000000)
+#define USB_OTG_GLOBAL_BASE                  ((uint32_t )0x000)
+#define USB_OTG_DEVICE_BASE                  ((uint32_t )0x800)
+#define USB_OTG_IN_ENDPOINT_BASE             ((uint32_t )0x900)
+#define USB_OTG_OUT_ENDPOINT_BASE            ((uint32_t )0xB00)
+#define USB_OTG_EP_REG_SIZE                  ((uint32_t )0x20)
+#define USB_OTG_HOST_BASE                    ((uint32_t )0x400)
+#define USB_OTG_HOST_PORT_BASE               ((uint32_t )0x440)
+#define USB_OTG_HOST_CHANNEL_BASE            ((uint32_t )0x500)
+#define USB_OTG_HOST_CHANNEL_SIZE            ((uint32_t )0x20)
+#define USB_OTG_PCGCCTL_BASE                 ((uint32_t )0xE00)
+#define USB_OTG_FIFO_BASE                    ((uint32_t )0x1000)
+#define USB_OTG_FIFO_SIZE                    ((uint32_t )0x1000)
+#define USB_OTG_FS          ((USB_OTG_GlobalTypeDef *) USB_OTG_FS_PERIPH_BASE)
+
+
+}
+
+
+
+
+
+
+
+
+
 
 (*
 
