@@ -181,6 +181,11 @@ Type
       ct_at91sam7x256,
       ct_at91sam7xc256,
 
+      { STMicroelectronics F0 }
+      ct_stm32f051x4,
+      ct_stm32f051x6,
+      ct_stm32f051x8,
+
       { STMicroelectronics F1 }
       ct_stm32f100x4, // LD&MD value line, 4=16,6=32,8=64,b=128
       ct_stm32f100x6,
@@ -544,6 +549,11 @@ Const
       (controllertypestr:'AT91SAM7SE256'; controllerunitstr:'AT91SAM7x256'; flashbase:$00000000;  flashsize:$00040000;  srambase:$00200000; sramsize:$00010000),
       (controllertypestr:'AT91SAM7X256';  controllerunitstr:'AT91SAM7x256'; flashbase:$00000000;  flashsize:$00040000;  srambase:$00200000; sramsize:$00010000),
       (controllertypestr:'AT91SAM7XC256'; controllerunitstr:'AT91SAM7x256'; flashbase:$00000000;  flashsize:$00040000;  srambase:$00200000; sramsize:$00010000),
+
+      { STM32F0 series }
+      (controllertypestr:'STM32F051X4';     controllerunitstr:'STM32F0XX';     flashbase:$08000000; flashsize:$00004000; srambase:$20000000; sramsize:$00002000),
+      (controllertypestr:'STM32F051X6';     controllerunitstr:'STM32F0XX';     flashbase:$08000000; flashsize:$00008000; srambase:$20000000; sramsize:$00002000),
+      (controllertypestr:'STM32F051X8';     controllerunitstr:'STM32F0XX';     flashbase:$08000000; flashsize:$00010000; srambase:$20000000; sramsize:$00002000),
 
       { STM32F1 series }
       (controllertypestr:'STM32F100X4';     controllerunitstr:'STM32F10X_LD';     flashbase:$08000000; flashsize:$00004000; srambase:$20000000; sramsize:$00001000),
