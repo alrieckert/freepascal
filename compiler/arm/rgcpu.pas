@@ -287,7 +287,9 @@ unit rgcpu;
         b : byte;
       begin
         result:=false;
-        if abs(spilltemp.offset)>4095 then
+
+        // ANTON FIX
+        if fix_spilling_offset(spilltemp.offset) then
           exit;
 
         { ldr can't set the flags }

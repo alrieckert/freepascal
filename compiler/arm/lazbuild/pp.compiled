@@ -1,5 +1,6 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1368710289"/>
-  <Params Value=" -MObjFPC -O1 -Twin32 -Pi386 -g -gl -vei -Se50 -Fi/home/anton/development/fpc/compiler/arm -Fu/home/anton/development/fpc/compiler/arm -Fu/home/anton/development/fpc/compiler/systems -Fu/home/anton/development/fpc/compiler/ -FU/home/anton/development/fpc/compiler/arm/lazbuild/ -l -FE/home/anton/development/fpc/compiler/arm/ -darm pp.pas"/>
+  <Compiler Value="/usr/local/bin/fpc" Date="1400259990"/>
+  <Params Value=" -MObjFPC -O1 -Twin32 -g -gl -vei -Se50 -Fi/home/anton/development/fpc_dev/compiler/arm -Fu/home/anton/development/fpc_dev/compiler/arm -Fu/home/anton/development/fpc_dev/compiler/systems -Fu/home/anton/development/fpc_dev/compiler/ -FU/home/anton/development/fpc_dev/compiler/arm/lazbuild/ -l -FE/home/anton/development/fpc_dev/compiler/arm/ -darm PP=/usr/lib/fpc/2.6.0/ppcx64 pp.pas"/>
+  <Complete Value="False"/>
 </CONFIG>
