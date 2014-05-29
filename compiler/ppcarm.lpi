@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
     <Version Value="9"/>
@@ -71,7 +71,6 @@
       </SyntaxOptions>
     </Parsing>
     <CodeGeneration>
-      <TargetCPU Value="i386"/>
       <TargetOS Value="win32"/>
     </CodeGeneration>
     <Other>
@@ -86,7 +85,7 @@
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
-      <CustomOptions Value="-darm"/>
+      <CustomOptions Value="-darm PP=/usr/lib/fpc/2.6.0/ppcx64"/>
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>

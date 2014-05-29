@@ -589,16 +589,16 @@ unit cpubase;
         else
           result:=false;
       end;
-    
+
     function is_continuous_mask(d : aint;var lsb, width: byte) : boolean;
       var
         msb : byte;
       begin
         lsb:=BsfDword(d);
         msb:=BsrDword(d);
-        
+
         width:=msb-lsb+1;
-        
+
         result:=(lsb<>255) and (msb<>255) and ((((1 shl (msb-lsb+1))-1) shl lsb) = d);
       end;
 

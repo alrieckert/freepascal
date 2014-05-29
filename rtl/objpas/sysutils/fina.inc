@@ -19,7 +19,7 @@ var
   i : longint;
   EndSep : Set of Char;
   SOF : Boolean;
-  
+
 begin
   i := Length(FileName);
   EndSep:=AllowDirectorySeparators+AllowDriveSeparators+[ExtensionSeparator];
@@ -32,7 +32,7 @@ begin
 	SOF:=(I=1) or (FileName[i-1] in AllowDirectorySeparators);
   	if (SOF) and not FirstDotAtFileNameStartIsExtension then
 	  I:=Length(FileName)+1;
-	end;  
+	end;
   Result := Copy(FileName, 1, I - 1) + Extension;
 end;
 
@@ -76,7 +76,7 @@ begin
     exit;
 {$IFDEF HASAMIGA}
   i:=Pos(DriveSeparator,FileName);
-  if (i > 0) then Result:=Copy(FileName,1,i); 
+  if (i > 0) then Result:=Copy(FileName,1,i);
 {$ELSE}
   If CharInSet(FileName[2],AllowDriveSeparators) then
     result:=Copy(FileName,1,2)
@@ -84,7 +84,7 @@ begin
           CharInSet(FileName[2],AllowDirectorySeparators) then
     begin
       i := 2;
-      
+
       { skip share }
       While (i<l) and Not CharInSet(Filename[i+1],AllowDirectorySeparators) do
         inc(i);
@@ -114,7 +114,7 @@ var
   i : longint;
   EndSep : Set of Char;
   SOF : Boolean; // Dot at Start of filename ?
-  
+
 begin
   Result:='';
   I := Length(FileName);
@@ -126,7 +126,7 @@ begin
 	SOF:=(I=1) or (FileName[i-1] in AllowDirectorySeparators);
 	if (Not SOF) or FirstDotAtFileNameStartIsExtension then
 	  Result := Copy(FileName, I, MaxInt);
-	end  
+	end
   else
     Result := '';
 end;
